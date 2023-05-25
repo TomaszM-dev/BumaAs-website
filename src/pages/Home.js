@@ -1,46 +1,161 @@
-import videoBg from "../img/video-bg.mp4";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import hero from "../img/buma-hero.avif";
 
 const Home = () => {
   return (
-    <div className="w-5/5 h-screen relative">
-      {/* OVERLAY */}
-      <div className="overlay absolute top-0 left-0 w-screen h-screen bg-black opacity-80"></div>
-      <video
-        src={videoBg}
-        autoPlay
-        loop
-        muted
-        infinite="true"
-        className="w-screen h-screen object-cover"
-      ></video>
-
-      {/*  CONTENT */}
-      <div className="absolute mt-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex w-[80rem]  items-center mx-auto ">
-        {/* MAIN INFO */}
-        <div className=" pl-20 w-50 text-white ">
-          <h1 className="text-8xl">
-            Buma <span className="text-blue-800">AS</span>
+    <HomeStyle>
+      <Hero>
+        <Content>
+          <h1>
+            Vi realiserer ditt prosjekt til <span>avtalt pris</span> og tid.
           </h1>
-          <p className="text-4xl mt-5">
-            Vi <span className="text-blue-800">realiserer</span> ditt prosjekt
-            til pris og tid.
-          </p>
-          <p className="mt-1 text-2xl">Velg oss og vi far jobben gjort</p>
-          <button className="px-14 py-4 mt-10 bg-blue-800 rounded-lg">
-            Explore
-          </button>
-        </div>
-
-        {/* CARDS */}
-        <div className="cards   flex-1 w-14  bg-transparent grid grid-cols-2 grid-rows-2  gap-8 m-10 h-[42rem] ">
-          <div className="card rounded-3xl bg-white"></div>
-          <div className="card rounded-3xl bg-yellow-100"></div>
-          <div className="card rounded-3xl bg-green-100"></div>
-          <div className="card rounded-3xl bg-slate-300"></div>
-        </div>
-      </div>
-    </div>
+          <h2>Velg oss og vi far jobben gjort!</h2>
+        </Content>
+        <Reviews>
+          <Stars>
+            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+          </Stars>
+          <Score>
+            <p>4.9/5.0 50+</p>
+            <p>reviews</p>
+          </Score>
+        </Reviews>
+      </Hero>
+      <ContactUs>
+        <h3>Contact Us</h3>
+      </ContactUs>
+    </HomeStyle>
   );
 };
 
 export default Home;
+
+const Hero = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  clip-path: polygon(0 0, 100% 0%, 100% 99%, 0 88%);
+  position: relative;
+  object-fit: cover;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    opacity: 0.8;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(${hero}) no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &:after {
+    box-shadow: inset 0px 3000px 4px rgba(59, 57, 154, 0.631);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const Content = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+
+  h1 {
+    /* text-align: center; */
+    margin-top: 11rem;
+    margin-bottom: 3rem;
+    z-index: 11;
+    font-size: 4.1rem;
+    color: white;
+    text-align: start;
+    margin-left: 7rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    z-index: 11;
+    font-weight: 400;
+    color: white;
+  }
+`;
+
+const Reviews = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 12;
+  margin-right: 2rem;
+
+  color: white;
+  padding: 4rem;
+  font-size: 1.4rem;
+
+  p {
+    padding: 0;
+  }
+`;
+
+const Stars = styled(motion.div)`
+  font-size: 1.8rem;
+  color: gold;
+`;
+
+const Score = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.8rem;
+
+  p {
+    font-size: 1.8rem;
+
+    font-weight: 700;
+    padding-right: 0.2rem;
+  }
+`;
+
+const HomeStyle = styled(motion.div)`
+  width: 100%;
+
+  position: relative;
+  text-align: end;
+`;
+
+const ContactUs = styled(motion.div)`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  z-index: 11;
+  color: black;
+  padding: 1.3rem 2.4rem;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  background: blue;
+  display: inline-block;
+  color: white;
+  margin-right: 4rem;
+  margin-bottom: 6rem;
+`;

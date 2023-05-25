@@ -1,26 +1,49 @@
 import logo from "../img/buma-logo-white.png";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const Nav = () => {
   return (
-    // NAV CONTAINER
-    <div className="bg-transparent flex justify-between items-center mt-6 pl-20 fixed w-screen z-10 ">
-      {/*  LOGO */}
-      <img src={logo} className="w-40" alt="" />
+    <Navbar>
+      <img src={logo} alt="" />
 
-      {/* LINKS  */}
-      <ul className="text-white flex pr-20 uppercase items-center align-middle ">
-        <li className="p-1 mr-4 cursor-pointer border-b-2 border-b-blue-700">
-          Home
-        </li>
-        <li className="p-1 mr-4 cursor-pointer">Projects</li>
-        <li className="p-1 mr-4 cursor-pointer">About Us</li>
-        <li className="p-1 mr-4 cursor-pointer">Contact</li>
-        <li className="p-1  mr-4 cursor-pointer bg-blue-800 rounded-md">
-          BESTILL GRATIS BEFARING
-        </li>
-      </ul>
-    </div>
+      <Links>
+        <li>Om Oss</li>
+        <li>Contact Us</li>
+        <li>Tjenester</li>
+        <li>Prosjekter</li>
+        <li>Credentials</li>
+      </Links>
+    </Navbar>
   );
 };
+
+const Navbar = styled(motion.div)`
+  background: transparent;
+  padding: 2rem 5rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 17rem;
+  }
+`;
+
+const Links = styled(motion.div)`
+  color: white;
+  list-style: none;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  li {
+    margin-left: 3rem;
+  }
+`;
 
 export default Nav;
