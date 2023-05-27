@@ -74,26 +74,26 @@ const Hero = styled(motion.div)`
 const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 
   height: 100%;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
 
   h1 {
-    /* text-align: center; */
-    margin-top: 11rem;
     margin-bottom: 3rem;
     z-index: 11;
-    font-size: 4.1rem;
+    font-size: 3.4rem;
     color: white;
-    text-align: start;
-    margin-left: 7rem;
+    margin-top: 10rem;
     font-weight: 600;
+    text-align: start;
   }
 
   h2 {
+    text-align: start;
+    font-size: 3.1rem;
     z-index: 11;
     font-weight: 400;
     color: white;
@@ -138,7 +138,7 @@ const Score = styled(motion.div)`
 
 const HomeStyle = styled(motion.div)`
   width: 100%;
-
+  height: 90vh;
   position: relative;
   text-align: end;
 `;
