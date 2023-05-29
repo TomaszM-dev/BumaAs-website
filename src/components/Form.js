@@ -46,6 +46,7 @@ const Container = styled(motion.div)`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding-bottom: 20rem;
 
   position: relative;
   object-fit: cover;
@@ -77,9 +78,9 @@ const Container = styled(motion.div)`
 
 const FormStyle = styled(motion.div)`
   width: 46%;
-
+  margin-top: 18rem;
   border-radius: 10px;
-  background: #ffffffa8;
+  background: #ffffffb3;
   z-index: 10;
   display: flex;
   flex-direction: column;

@@ -6,6 +6,7 @@ import WhatWeOffer from "./pages/WhatWeOffer";
 import Credentials from "./pages/Credentials";
 import ContactUs from "./pages/ContactUs";
 import Form from "./components/Form";
+import Footer from "./components/Footer";
 // import { motion } from "framer-motion";
 // import styled from "styled-components";
 
@@ -20,6 +21,7 @@ function App({ renderBg }) {
       <Credentials />
       <ContactUs />
       <Form />
+      <Footer />
     </div>
   );
 }

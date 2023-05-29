@@ -71,7 +71,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p{
-    padding: 3rem 0rem;
+    padding: 2rem 0rem;
 
     font-size: 1.2rem;
     line-height: 150%;

@@ -21,10 +21,10 @@ const Nav = () => {
 const Navbar = styled(motion.div)`
   background: #050572;
   padding: 1rem 5rem;
-  height: 11rem;
+  height: 9rem;
   width: 100%;
   position: fixed;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+  /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%); */
   top: 0;
   left: 0;
   z-index: 1000000;
