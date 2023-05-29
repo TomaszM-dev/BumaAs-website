@@ -4,6 +4,7 @@ import Title from "../components/Title";
 import hero from "../img/buma-hero.avif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import Form from "../components/Form";
 
 const ContactUs = () => {
   const title = "Contact Us";
@@ -58,7 +59,7 @@ const Container = styled(motion.div)`
     width: 30%;
     padding: 2rem;
     font-size: 1.4rem;
-    /* align-self: start; */
+
     margin-left: 10rem;
     margin-top: 2rem;
 
