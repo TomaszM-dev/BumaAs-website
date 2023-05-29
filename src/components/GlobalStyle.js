@@ -88,6 +88,9 @@ const GlobalStyle = createGlobalStyle`
 
 
 
+  // swiper style
+
+
 .swiper_container {
   height: 52rem;
   padding: 2rem 0;
@@ -205,5 +208,10 @@ const GlobalStyle = createGlobalStyle`
 .swiper-pagination .swiper-pagination-bullet-active {
   background: blue;
 }
+
+
 `;
+
+// contact us background styling
+
 export default GlobalStyle;
