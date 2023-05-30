@@ -2,6 +2,7 @@ import Title from "../components/Title";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import opinion from "../img/reference.webp";
+import WaveOpinions from "../components/WaveOpinions";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,7 +16,8 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 const Credentials = () => {
   const title = "Opinions";
   return (
-    <Container>
+    <Container id="referenser">
+      <WaveOpinions />
       <TitleContainer>
         <Title title={title} />
         <h4>
@@ -97,7 +99,8 @@ const Opinion = styled(motion.div)`
 `;
 
 const Container = styled(motion.div)`
-  margin-top: 10rem;
+  position: relative;
+  margin-top: 1rem;
   width: 100%;
   height: 100vh;
 `;

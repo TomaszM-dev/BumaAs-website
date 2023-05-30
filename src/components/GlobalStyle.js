@@ -212,6 +212,4 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-// contact us background styling
-
 export default GlobalStyle;

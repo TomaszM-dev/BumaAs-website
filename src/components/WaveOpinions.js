@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Wave = () => {
+const WaveOpinions = () => {
   return (
     <WaveSvg
       viewBox="0 0 3206 2273"
@@ -55,10 +55,10 @@ const Wave = () => {
 
 const WaveSvg = styled.svg`
   position: absolute;
-  top: -7rem;
+  top: 10rem;
 
   width: 100%;
 
   left: 0;
 `;
-export default Wave;
+export default WaveOpinions;

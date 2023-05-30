@@ -9,6 +9,7 @@ const WhatWeDo = function () {
 
   return (
     <Container>
+      <Wave />
       <Headline>
         <Title title={title}></Title>
       </Headline>
@@ -23,9 +24,10 @@ const WhatWeDo = function () {
 };
 
 const Container = styled(motion.div)`
+  position: relative;
   margin-top: 5rem;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
 
   flex-direction: column;
@@ -38,7 +40,7 @@ const Headline = styled(motion.div)`
 const Cards = styled(motion.div)`
   /* max-width: 80rem; */
 
-  margin: 10rem auto;
+  margin: 5rem auto;
   display: flex;
 `;
 

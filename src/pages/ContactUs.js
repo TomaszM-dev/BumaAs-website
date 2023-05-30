@@ -9,6 +9,7 @@ const ContactUs = () => {
   const title = "Contact Us";
   return (
     <Container
+      id="contact"
       style={{
         background: `linear-gradient(100deg, #ffffffe6 50%, rgba(0, 0, 0, 0)50%), url(${hero})`,
       }}

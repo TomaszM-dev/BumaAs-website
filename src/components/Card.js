@@ -82,10 +82,11 @@ const Img = styled(motion.div)`
 const CardContainer = styled(motion.div)`
   display: flex;
   align-items: center;
+
   justify-content: center;
   flex-direction: column;
-  transition: z-index 1000ms, transform 1000ms;
-  z-index: 0;
+  transition: all 1s;
+  z-index: 10;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   margin: 0 1.9rem;
@@ -114,7 +115,7 @@ const CardSlide = css`
 const CardFront = styled.div`
   ${CardSlide}
   z-index: 0;
-
+  background: white;
   &.flipped {
     transform: rotateY(-180deg);
   }

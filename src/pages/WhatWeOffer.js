@@ -13,7 +13,7 @@ const WhatWeOffer = () => {
   const title = "What We Offer";
 
   return (
-    <Container>
+    <Container id="tjenester">
       <TitleContainer>
         <Title title={title} />
       </TitleContainer>

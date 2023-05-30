@@ -6,7 +6,7 @@ import hero from "../img/buma-hero.avif";
 
 const Home = () => {
   return (
-    <HomeStyle>
+    <HomeStyle id="home">
       <Hero>
         <Content>
           <h1>
@@ -41,7 +41,7 @@ const Hero = styled(motion.div)`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 90vh;
   clip-path: polygon(0 0, 100% 0%, 100% 99%, 0 88%);
   position: relative;
   object-fit: cover;
@@ -145,7 +145,7 @@ const HomeStyle = styled(motion.div)`
 
 const ContactUs = styled(motion.div)`
   position: fixed;
-  bottom: 0;
+  bottom: -3rem;
   right: 0;
 
   z-index: 11;

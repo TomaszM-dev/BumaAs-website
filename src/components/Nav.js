@@ -1,20 +1,34 @@
 import logo from "../img/buma-logo-white.png";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 const Nav = () => {
   return (
-    <Navbar>
-      <img src={logo} alt="" />
+    <>
+      <Navbar>
+        <Links>
+          <li>Om Oss</li>
+          <HashLink to="#contact" smooth>
+            Contact Us
+          </HashLink>
+          <HashLink to="#referenser" smooth>
+            Referenser
+          </HashLink>
+        </Links>
+        <HashLink to="#home" smooth>
+          <img src={logo} alt="" />
+        </HashLink>
 
-      <Links>
-        <li>Om Oss</li>
-        <li>Contact Us</li>
-        <li>Tjenester</li>
-        <li>Prosjekter</li>
-        <li>Credentials</li>
-      </Links>
-    </Navbar>
+        <Links>
+          <HashLink to="#tjenester" smooth>
+            Tjenester
+          </HashLink>
+          <li>Prosjekter</li>
+          <li>Blogg</li>
+        </Links>
+      </Navbar>
+    </>
   );
 };
 
@@ -33,7 +47,7 @@ const Navbar = styled(motion.div)`
   justify-content: space-between;
   opacity: 0.9;
   img {
-    margin-left: 7rem;
+    /* margin-left: 7rem; */
     width: 17rem;
   }
 `;
@@ -48,6 +62,18 @@ const Links = styled(motion.div)`
 
   li {
     margin-left: 3rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-left: 3rem;
+    transition: all 0.4s;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: #7d3b3b;
+    }
   }
 `;
 
