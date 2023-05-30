@@ -1,14 +1,16 @@
 import Title from "../components/Title";
-import Wave from "../components/Wave";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import hero from "../img/utilities/buma-hero.avif";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+
+import Filter from "../components/Filter";
+import { OutdoorData } from "../Data/TjenesterData";
 
 const WhatWeOffer = () => {
-  const [active, setActive] = useState("true");
+  const workData = OutdoorData();
+  const [filtered, setFiltered] = useState(OutdoorData());
+  const [activeCategory, setActiveCategory] = useState("outdoor");
 
   const title = "What We Offer";
 
@@ -18,62 +20,21 @@ const WhatWeOffer = () => {
         <Title title={title} />
       </TitleContainer>
       <Work>
-        <Links>
-          <button
-            onClick={() => setActive(true)}
-            className={active ? "active" : ""}
-          >
-            Outdoor Work
-          </button>
-          <button
-            onClick={() => setActive(false)}
-            className={!active ? "active" : ""}
-          >
-            Indoor Work
-          </button>
-        </Links>
-        <Items>
-          {active ? (
-            <>
-              <Item>
-                <FontAwesomeIcon
-                  icon={faStar}
-                  className="icon"
-                ></FontAwesomeIcon>
-                <h3>Maling Innveliding</h3>
+        <Filter
+          workData={workData}
+          setFiltered={setFiltered}
+          setActiveCategory={setActiveCategory}
+          activeCategory={activeCategory}
+        />
+        <Items layout>
+          {filtered.map((el) => {
+            return (
+              <Item layout key={el.title} title={el.title} img={el.img}>
+                <img src={el.img} alt="" />
+                <h3>{el.title}</h3>
               </Item>
-              <Item>
-                <FontAwesomeIcon
-                  icon={faStar}
-                  className="icon"
-                ></FontAwesomeIcon>
-                <h3>Maling Innveliding</h3>
-              </Item>
-              <Item>
-                <FontAwesomeIcon
-                  icon={faStar}
-                  className="icon"
-                ></FontAwesomeIcon>
-                <h3>Maling Innveliding</h3>
-              </Item>
-              <Item>
-                <FontAwesomeIcon
-                  icon={faStar}
-                  className="icon"
-                ></FontAwesomeIcon>
-                <h3>Maling Innveliding</h3>
-              </Item>
-              <Item>
-                <FontAwesomeIcon
-                  icon={faStar}
-                  className="icon"
-                ></FontAwesomeIcon>
-                <h3>Maling Innveliding</h3>
-              </Item>
-            </>
-          ) : (
-            ""
-          )}
+            );
+          })}
         </Items>
       </Work>
     </Container>
@@ -82,7 +43,7 @@ const WhatWeOffer = () => {
 
 const Work = styled(motion.div)`
   z-index: 1000;
-  height: 37rem;
+  /* height: 37rem; */
   width: 80rem;
   margin: 0 auto;
   border-radius: 5px;
@@ -90,23 +51,26 @@ const Work = styled(motion.div)`
 `;
 
 const Items = styled(motion.div)`
-  margin-top: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
 `;
 const Item = styled(motion.div)`
+  width: 80%;
   display: flex;
   flex-direction: column;
-  align-self: center;
+  align-items: center;
   justify-content: center;
   margin: 2rem 2rem;
 
-  .icon {
+  img {
     background: #ffffff;
     font-size: 5rem;
     padding: 2rem;
+    border-radius: 1rem;
     opacity: 0.8;
+    width: 10rem;
   }
 
   h3 {
@@ -144,7 +108,7 @@ const Links = styled(motion.div)`
 
 const Container = styled(motion.div)`
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
   position: relative;
   object-fit: cover;
