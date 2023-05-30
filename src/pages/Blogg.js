@@ -1,7 +1,7 @@
 const Blogg = () => {
   return (
     <div>
-      <h3>hello om us</h3>
+      <h3>hello Bloog</h3>
     </div>
   );
 };

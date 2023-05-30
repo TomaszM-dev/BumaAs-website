@@ -18,18 +18,20 @@ function App({ renderBg }) {
   return (
     <div>
       <GlobalStyle />
-      <Nav />
       <Routes>
         <Route
           path="/"
           exact
           element={
             <>
+              <Nav />
               <Home></Home>
               <WhatWeDo></WhatWeDo>
               <WhatWeOffer></WhatWeOffer>
               <Credentials></Credentials>
               <ContactUs></ContactUs>
+              <Form />
+              <Footer />
             </>
           }
         />
@@ -37,8 +39,6 @@ function App({ renderBg }) {
         <Route path="/omuss" exact element={<OmUss></OmUss>} />
         <Route path="/blogg" exact element={<Blogg></Blogg>} />
       </Routes>
-      <Form />
-      <Footer />
     </div>
   );
 }

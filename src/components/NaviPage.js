@@ -3,28 +3,36 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-const Nav = () => {
+const NaviPage = () => {
   return (
     <>
       <Navbar>
         <Links>
           <Link to="/omuss">Om Oss</Link>
 
-          <HashLink to="#contact" smooth>
-            Contact Us
-          </HashLink>
-          <HashLink to="#referenser" smooth>
-            Referenser
-          </HashLink>
+          <Link to="/">
+            <HashLink to="/#contact" smooth>
+              Contact Us
+            </HashLink>
+          </Link>
+          <Link to="/" smooth>
+            <HashLink to="/#referenser" smooth>
+              Referenser
+            </HashLink>
+          </Link>
         </Links>
-        <HashLink to="#home" smooth>
-          <img src={logo} alt="" />
-        </HashLink>
+        <Link to="/" smooth>
+          <HashLink to="/#home" smooth>
+            <img src={logo} alt="" />
+          </HashLink>
+        </Link>
 
         <Links>
-          <HashLink to="#tjenester" smooth>
-            Tjenester
-          </HashLink>
+          <Link to="/" smooth>
+            <HashLink to="/#tjenester" smooth>
+              Tjenester
+            </HashLink>
+          </Link>
           <Link to="/prosjekter">Prosjekter</Link>
           <Link to="/blogg">Blogg</Link>
         </Links>
@@ -62,13 +70,12 @@ const Links = styled(motion.div)`
   font-weight: 500;
 
   li {
-    margin-left: 3rem;
   }
 
   a {
     color: white;
     text-decoration: none;
-    margin-left: 3rem;
+    margin-left: 1.3rem;
     transition: all 0.4s;
     font-size: 1.5rem;
 
@@ -78,4 +85,4 @@ const Links = styled(motion.div)`
   }
 `;
 
-export default Nav;
+export default NaviPage;
