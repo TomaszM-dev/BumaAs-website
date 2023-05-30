@@ -2,7 +2,7 @@ import Title from "../components/Title";
 import Wave from "../components/Wave";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import hero from "../img/buma-hero.avif";
+import hero from "../img/utilities/buma-hero.avif";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";

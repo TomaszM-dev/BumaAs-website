@@ -3,8 +3,11 @@ import Wave from "../components/Wave";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import Card from "../components/Card";
+import CardData from "../Data/CardData";
 
 const WhatWeDo = function () {
+  const cardData = CardData();
+
   const title = "What we Do";
 
   return (
@@ -14,10 +17,16 @@ const WhatWeDo = function () {
         <Title title={title}></Title>
       </Headline>
       <Cards>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {cardData.map((el) => {
+          return (
+            <Card
+              title={el.title}
+              img={el.img}
+              frontInfo={el.frontInfo}
+              backInfo={el.backInfo}
+            ></Card>
+          );
+        })}
       </Cards>
     </Container>
   );

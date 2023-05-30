@@ -1,35 +1,32 @@
 import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { useState } from "react";
-import hero from "../img/buma-hero.avif";
 
-const Card = () => {
+const Card = ({ img, frontInfo, backInfo, title }) => {
   const [flipped, setFlipped] = useState(false);
 
   return (
     <CardContainer>
       <CardInner className={flipped ? "flipped" : ""}>
         <CardFront onClick={() => setFlipped(true)}>
-          <Img></Img>
+          <Img style={{ backgroundImage: `url(${img})` }}></Img>
           <Heading>
-            <span>Et gratis Tilbud</span>
+            <span>{title}</span>
           </Heading>
+
           <ul>
-            <li>Gratis Tour</li>
-            <li>Up to 30 people</li>
-            <li>2 tours to be</li>
-            <li>Going all way</li>
+            {frontInfo.map((el) => {
+              return <li>{el}</li>;
+            })}
           </ul>
 
           <button onClick={() => setFlipped(true)}>See More</button>
         </CardFront>
         <CardBack onClick={() => setFlipped(false)}>
-          <h2>Et gratis tilbud</h2>
-          <p>
-            Vi utarbeider gratis og uforpliktende pristilbud. Tilbudet er
-            detaljert utformet slik at ingen ekstra og skjulte kostnader skal
-            tilkomme.
-          </p>
+          <h2>{title}</h2>
+          {backInfo.map((el) => {
+            return <p>{el}</p>;
+          })}
           <button onClick={() => setFlipped(false)}>See Less</button>
         </CardBack>
       </CardInner>
@@ -65,8 +62,6 @@ const Img = styled(motion.div)`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-
-  background-image: url(${hero});
 
   &:after {
     box-shadow: inset 0px 3000px 4px rgba(59, 57, 154, 0.631);

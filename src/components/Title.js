@@ -1,4 +1,4 @@
-import bluePaint from "../img/blue-paint.png";
+import bluePaint from "../img/utilities/blue-paint.png";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 

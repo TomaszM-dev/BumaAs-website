@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import Title from "../components/Title";
-import hero from "../img/buma-hero.avif";
+import hero from "../img/utilities/buma-hero.avif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 

@@ -1,7 +1,7 @@
 import Title from "../components/Title";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import opinion from "../img/reference.webp";
+import opinion from "../img/references/reference.webp";
 import WaveOpinions from "../components/WaveOpinions";
 
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
-import logo from "../img/buma-logo-white.png";
+import logo from "../img/utilities/buma-logo-white.png";
 
 const Footer = () => {
   return (

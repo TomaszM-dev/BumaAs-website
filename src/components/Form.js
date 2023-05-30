@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import logoBlue from "../img/buma-logo-blue.png";
-
-import hero from "../img/buma-hero.avif";
+import logoBlue from "../img/utilities/buma-logo-blue.png";
+import hero from "../img/utilities/buma-hero.avif";
 
 const Form = () => {
   return (
