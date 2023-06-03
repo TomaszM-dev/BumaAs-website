@@ -1,9 +1,11 @@
 import Title from "../components/Title";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import opinion from "../img/references/reference.webp";
-import WaveOpinions from "../components/WaveOpinions";
 
+import WaveOpinions from "../components/WaveOpinions";
+import CredentialsData from "../Data/CredentialsData";
+
+import { useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -14,7 +16,18 @@ import "swiper/css/navigation";
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 const Credentials = () => {
+  const location = useLocation();
+  const url = location.pathname;
+  console.log(location);
   const title = "Opinions";
+
+  const credentialsData = CredentialsData();
+
+  const activeHandler = (e) => {
+    const imgId = e.target.src.split(".")[1].slice(0, 5);
+    console.log(imgId);
+  };
+
   return (
     <Container id="referenser">
       <WaveOpinions />
@@ -47,24 +60,13 @@ const Credentials = () => {
           modules={[EffectCoverflow, Pagination, Navigation]}
           className="swiper_container"
         >
-          <SwiperSlide>
-            <img src={opinion} alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={opinion} alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={opinion} alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={opinion} alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={opinion} alt="slide_image" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={opinion} alt="slide_image" />
-          </SwiperSlide>
+          {credentialsData.map((el) => {
+            return (
+              <SwiperSlide onClick={activeHandler} id={el.title}>
+                <img src={el.image} id={el.title} alt="" />
+              </SwiperSlide>
+            );
+          })}
           <div className="slider-controler">
             <div className="swiper-button-prev slider-arrow">
               <ion-icon name="arrow-back-outline"></ion-icon>
@@ -88,6 +90,9 @@ const Opinions = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+  }
 `;
 
 const Opinion = styled(motion.div)`

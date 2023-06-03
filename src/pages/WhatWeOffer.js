@@ -1,5 +1,5 @@
 import Title from "../components/Title";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import hero from "../img/utilities/buma-hero.avif";
 import { useState } from "react";
@@ -26,15 +26,30 @@ const WhatWeOffer = () => {
           setActiveCategory={setActiveCategory}
           activeCategory={activeCategory}
         />
-        <Items layout>
-          {filtered.map((el) => {
-            return (
-              <Item layout key={el.title} title={el.title} img={el.img}>
-                <img src={el.img} alt="" />
-                <h3>{el.title}</h3>
-              </Item>
-            );
-          })}
+        <Items
+          layout
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
+        >
+          <AnimatePresence>
+            {filtered.map((el) => {
+              return (
+                <Item
+                  layout
+                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  key={el.title}
+                >
+                  <img src={el.img} alt="" />
+
+                  <h3>{el.title}</h3>
+                </Item>
+              );
+            })}
+          </AnimatePresence>
         </Items>
       </Work>
     </Container>
@@ -43,16 +58,20 @@ const WhatWeOffer = () => {
 
 const Work = styled(motion.div)`
   z-index: 1000;
-  /* height: 37rem; */
+  transition: all 1s;
+  height: 51rem;
   width: 80rem;
   margin: 0 auto;
   border-radius: 5px;
   background-color: #ffffff90;
+  overflow: hidden;
 `;
 
 const Items = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 2rem;
 `;
@@ -61,8 +80,11 @@ const Item = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  cursor: pointer;
   margin: 2rem 2rem;
+  padding-top: 1rem;
+
+  overflow: hidden;
 
   img {
     background: #ffffff;
@@ -71,12 +93,28 @@ const Item = styled(motion.div)`
     border-radius: 1rem;
     opacity: 0.8;
     width: 10rem;
+    /* object-fit: cover; */
+    transition: all 1s;
   }
 
   h3 {
     margin-top: 1.3rem;
     text-align: center;
     font-size: 1.7rem;
+    transition: all 1s;
+  }
+
+  &:hover {
+    img {
+      transition: all 1s;
+      transform: translateY(-0.1rem) scale(1.1);
+    }
+
+    h3 {
+      color: blue;
+      transition: all 1s;
+      transform: translateY(-0.1rem);
+    }
   }
 `;
 
@@ -108,8 +146,8 @@ const Links = styled(motion.div)`
 
 const Container = styled(motion.div)`
   width: 100%;
-  height: 100vh;
-  clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+  height: 110vh;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   position: relative;
   object-fit: cover;
 
