@@ -119,13 +119,23 @@ const GlobalStyle = createGlobalStyle`
   }
 }
 
-.swiper-slide img {
+.swiper-slide img  {
   /* border: 2px solid blue; */
   border-radius: 20px;
   width: 37rem;
   height: 42rem;
   box-shadow: 0 0 1.3rem #1e439f;
   border-radius: 2rem;
+
+ 
+
+}
+
+.swiper-slide h3 {
+position:absolute;
+bottom: 0;
+left: 40%;
+color: blue;
 
 }
 
@@ -137,13 +147,18 @@ const GlobalStyle = createGlobalStyle`
 .slider-controler {
   position: relative;
   bottom: 2rem;
+
+  padding: 2rem;
+
   display: flex;
-  align-items: center;
+
+  align-items: center;  
   justify-content: center;
 }
 
 .slider-controler .swiper-button-next {
-  left: 58% !important;
+  left: 60% !important;
+
   transform: translateX(-58%) !important;
 }
 
@@ -176,19 +191,24 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .slider-controler .slider-arrow {
-  background: black;
+  /* background: black; */
+
   color: black;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  left: 42%;
-  transform: translateX(-42%);
+  left: 40%;
+  transform: translateX(-40%);
   filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
 }
 
 .slider-controler .slider-arrow ion-icon {
-  font-size: 2rem;
-  color: #7b7b90;
+  font-size: 4rem;
+
+  color: blue;
+  /* background: blue; */
+  /* border-radius: 50%; */
+
 }
 
 .slider-controler .slider-arrow::after {
@@ -197,7 +217,7 @@ const GlobalStyle = createGlobalStyle`
 
 .swiper-pagination {
   position: relative;
-  width: 15rem !important;
+  width: 18rem !important;
   bottom: 1rem;
 }
 

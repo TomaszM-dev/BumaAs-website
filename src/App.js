@@ -1,16 +1,10 @@
 import GlobalStyle from "./components/GlobalStyle";
-import Nav from "./components/Nav";
-import Home from "./pages/Home";
-import WhatWeDo from "./pages/WhatWeDo";
-import WhatWeOffer from "./pages/WhatWeOffer";
-import Credentials from "./pages/Credentials";
-import ContactUs from "./pages/ContactUs";
-import Form from "./components/Form";
-import Footer from "./components/Footer";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+
 import OmUss from "./pages/OmUss";
 import Blogg from "./pages/Blogg";
 import Prosjekter from "./pages/Prosjekter";
+import MainPage from "./pages/MainPage";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 // import { motion } from "framer-motion";
 // import styled from "styled-components";
 
@@ -24,14 +18,16 @@ function App({ renderBg }) {
           exact
           element={
             <>
-              <Nav />
-              <Home></Home>
-              <WhatWeDo></WhatWeDo>
-              <WhatWeOffer></WhatWeOffer>
-              <Credentials></Credentials>
-              <ContactUs></ContactUs>
-              <Form />
-              <Footer />
+              <MainPage />
+            </>
+          }
+        />
+        <Route
+          path="/:id"
+          exact
+          element={
+            <>
+              <MainPage />
             </>
           }
         />

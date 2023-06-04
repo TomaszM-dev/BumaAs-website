@@ -17,7 +17,7 @@ export const OutdoorData = () => {
     {
       img: vask_fasade,
       title: "Vask av fasade og tak",
-      category: "outdoor",
+      category: ["outdoor"],
     },
     {
       img: utskifting_vinduer_dorer,
@@ -32,7 +32,7 @@ export const OutdoorData = () => {
     {
       img: sparkling_tapetsering,
       title: "Sparkling og taptesering",
-      category: "indoor",
+      category: ["indoor"],
     },
     {
       img: rigge_stillas,
