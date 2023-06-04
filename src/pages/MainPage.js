@@ -4,7 +4,7 @@ import WhatWeDo from "./WhatWeDo";
 import WhatWeOffer from "./WhatWeOffer";
 import Credentials from "./Credentials";
 import ContactUs from "./ContactUs";
-import Form from "../components/Form";
+import FormFaq from "./FormFaq";
 import Footer from "../components/Footer";
 
 const MainPage = () => {
@@ -16,7 +16,7 @@ const MainPage = () => {
       <WhatWeOffer />
       <Credentials />
       <ContactUs />
-      <Form />
+      <FormFaq />
       <Footer />
     </>
   );

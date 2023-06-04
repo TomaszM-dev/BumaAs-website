@@ -51,6 +51,8 @@ const Cards = styled(motion.div)`
 
   margin: 5rem auto;
   display: flex;
+
+  /* flex-wrap: wrap; */
 `;
 
 const Content = styled(motion.div)``;

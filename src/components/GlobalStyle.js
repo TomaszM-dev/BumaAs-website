@@ -157,7 +157,7 @@ color: blue;
 }
 
 .slider-controler .swiper-button-next {
-  left: 60% !important;
+  left: 61% !important;
 
   transform: translateX(-58%) !important;
 }
@@ -197,7 +197,7 @@ color: blue;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  left: 40%;
+  left: 39%;
   transform: translateX(-40%);
   filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
 }
