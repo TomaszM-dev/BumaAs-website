@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import Toggle from "./Toggle.js";
 import { motion } from "framer-motion";
-import { LayoutGroup } from "framer-motion";
+import { LayoutGroup, AnimatePresence } from "framer-motion";
 import { useScroll } from "./useScroll.js";
 import { scrollReveal, titleAnimation } from "../animations";
 import FaqData from "../Data/FaqData.js";
