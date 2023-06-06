@@ -30,22 +30,16 @@ const Nav = () => {
       <Navbar className={background ? "bg-blue" : ""}>
         <Links>
           <Link to="/omuss">Om Oss</Link>
-
-          <HashLink to="#contact" scroll={scrollHandler}>
-            Contact Us
-          </HashLink>
-          <HashLink to="#referenser" scroll={scrollHandler}>
-            Referenser
-          </HashLink>
+          <Link to="/contactus">Contact Us</Link>
+          <Link to="/referenser">Referenser</Link>
         </Links>
-        <HashLink to="#home" scroll={scrollHandler}>
+
+        <Link to="/#home">
           <img src={logo} alt="" />
-        </HashLink>
+        </Link>
 
         <Links>
-          <HashLink to="#tjenester" scroll={scrollHandler}>
-            Tjenester
-          </HashLink>
+          <Link to="/tjenester">Tjenester</Link>
           <Link to="/prosjekter">Prosjekter</Link>
           <Link to="/blogg">Blogg</Link>
         </Links>
@@ -67,6 +61,7 @@ const Navbar = styled(motion.div)`
   justify-content: space-between;
   opacity: 0.9;
   transition: all 0.3s;
+  background-color: #050572;
   &.bg-blue {
     background-color: #050572;
   }

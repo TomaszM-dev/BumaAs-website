@@ -3,16 +3,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import hero from "../img/utilities/buma-hero.avif";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import Filter from "../components/Filter";
-import { OutdoorData } from "../Data/TjenesterData";
+import { TjenesterData } from "../Data/TjenesterData";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-const WhatWeOffer = () => {
-  const workData = OutdoorData();
-  const [filtered, setFiltered] = useState(OutdoorData());
+const WhatWeOffer = ({ setIsActive, active }) => {
+  const workData = TjenesterData();
+  const [filtered, setFiltered] = useState(TjenesterData());
   const [activeCategory, setActiveCategory] = useState("outdoor");
 
+  const ref = useRef(null);
   const title = "What We Offer";
+
+  const linkHandler = (e) => {
+    const cur = filtered.filter((el) => el.img === e.target.src);
+
+    // loc(`/tjenester/${cur[0]?.url}`);
+    setIsActive(cur);
+  };
+
+  // console.log(currentItem[0]);
 
   return (
     <Container id="tjenester">
@@ -35,18 +47,22 @@ const WhatWeOffer = () => {
           <AnimatePresence>
             {filtered.map((el) => {
               return (
-                <Item
-                  layout
-                  animate={{ opacity: 1 }}
-                  initial={{ opacity: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                  key={el.title}
-                >
-                  <img src={el.img} alt="" />
+                <Link to={`tjenester/${el.url}`}>
+                  <Item
+                    onClick={linkHandler}
+                    ref={ref}
+                    layout
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    key={el.title}
+                  >
+                    <img src={el.img} alt="" />
 
-                  <h3>{el.title}</h3>
-                </Item>
+                    <h3>{el.title}</h3>
+                  </Item>
+                </Link>
               );
             })}
           </AnimatePresence>

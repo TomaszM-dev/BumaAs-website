@@ -5,7 +5,7 @@ import hero from "../img/utilities/buma-hero.avif";
 
 const Form = () => {
   return (
-    <FormStyle>
+    <FormStyle id="form">
       <img src={logoBlue} alt="" />
       <form>
         <div className="form-group">
@@ -25,8 +25,8 @@ const Form = () => {
           <textarea
             name="description"
             id="description"
-            cols="18"
-            rows="10"
+            cols="14"
+            rows="7"
             placeholder="Beskrivelse*"
           ></textarea>
           <button>send</button>
@@ -41,6 +41,7 @@ const FormStyle = styled(motion.div)`
   border-radius: 10px;
   background: #ffffffb3;
   z-index: 10;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,11 +52,11 @@ const FormStyle = styled(motion.div)`
   }
 
   form {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
 
     input {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-top: 1.5rem;
       width: 100%;
       border: none;

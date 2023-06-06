@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
 
   }
   
+  a{
+    text-decoration:none;
+    color:inherit;
+  }
 
   html{
     font-size: 75%;

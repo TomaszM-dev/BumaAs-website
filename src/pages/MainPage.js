@@ -7,13 +7,13 @@ import ContactUs from "./ContactUs";
 import FormFaq from "./FormFaq";
 import Footer from "../components/Footer";
 
-const MainPage = () => {
+const MainPage = ({ setIsActive, active }) => {
   return (
     <>
       <Nav />
       <Home />
       <WhatWeDo />
-      <WhatWeOffer />
+      <WhatWeOffer setIsActive={setIsActive} active={active} />
       <Credentials />
       <ContactUs />
       <FormFaq />

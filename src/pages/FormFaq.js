@@ -50,7 +50,7 @@ const Bg = styled(motion.div)`
 const Container = styled(motion.div)`
   backface-visibility: hidden;
   display: flex;
-  height: 90%;
+  height: 80%;
   width: 80%;
   margin: auto;
   padding-top: 10rem;

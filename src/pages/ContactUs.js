@@ -4,9 +4,19 @@ import Title from "../components/Title";
 import hero from "../img/utilities/buma-hero.avif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   const title = "Contact Us";
+
+  const scrollHandler = (el) => {
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
   return (
     <Container
       id="contact"
@@ -27,9 +37,11 @@ const ContactUs = () => {
           prosjektlederen og finne ut en løsning på utfordringen som står foran
           deg.
         </p>
-        <button>
-          Lets Talk! <FontAwesomeIcon className="icon" icon={faArrowDown} />
-        </button>
+        <HashLink to="#form" scroll={scrollHandler}>
+          <button>
+            Lets Talk! <FontAwesomeIcon className="icon" icon={faArrowDown} />
+          </button>
+        </HashLink>
       </Content>
     </Container>
   );
@@ -56,7 +68,7 @@ const Container = styled(motion.div)`
   }
 
   button {
-    width: 30%;
+    width: 60%;
     padding: 2rem;
     font-size: 1.4rem;
 

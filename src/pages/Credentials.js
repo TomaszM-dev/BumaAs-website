@@ -1,10 +1,9 @@
 import Title from "../components/Title";
 
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 import WaveOpinions from "../components/WaveOpinions";
-import CredentialsData from "../Data/CredentialsData";
-import { useLocation } from "react-router-dom";
+
 import CredentialsDetails from "../components/CredentialsDetails";
 import { motion, AnimatePresence } from "framer-motion";
 

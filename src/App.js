@@ -5,10 +5,15 @@ import Blogg from "./pages/Blogg";
 import Prosjekter from "./pages/Prosjekter";
 import MainPage from "./pages/MainPage";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import styled from "styled-components";
+import Tjenester from "./pages/Tjenester";
+import { useState } from "react";
 
-function App({ renderBg }) {
+import TjenesterData from "./Data/TjenesterData";
+
+function App() {
+  const tjenesterData = TjenesterData();
+  const [active, setIsActive] = useState([tjenesterData[0]]);
+
   return (
     <div>
       <GlobalStyle />
@@ -18,7 +23,7 @@ function App({ renderBg }) {
           exact
           element={
             <>
-              <MainPage />
+              <MainPage setIsActive={setIsActive} active={active} />
             </>
           }
         />
@@ -32,6 +37,20 @@ function App({ renderBg }) {
           }
         />
         <Route path="/prosjekter" exact element={<Prosjekter></Prosjekter>} />
+        <Route
+          path="/tjenester"
+          exact
+          element={
+            <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
+          }
+        />
+        <Route
+          path="/tjenester/:id"
+          exact
+          element={
+            <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
+          }
+        />
         <Route path="/omuss" exact element={<OmUss></OmUss>} />
         <Route path="/blogg" exact element={<Blogg></Blogg>} />
       </Routes>

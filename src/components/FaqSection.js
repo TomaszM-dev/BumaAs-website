@@ -34,7 +34,7 @@ const FaqSection = () => {
                   exit={{ opacity: 0, translateY: -50 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <p>{el.answer}</p>
+                  {el.answer}
                 </motion.p>
               </Toggle>
             );
@@ -74,7 +74,7 @@ const Faq = styled(motion.div)`
 
   .answer {
     p {
-      padding: 1.8rem;
+      padding: 0;
     }
   }
 `;

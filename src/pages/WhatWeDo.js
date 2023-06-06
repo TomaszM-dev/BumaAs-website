@@ -87,7 +87,7 @@ const TabIndicator = styled(motion.div)`
   background: blue;
   color: white;
   top: 5.6rem;
-  left: 23.7rem;
+  left: 23.3rem;
   border-radius: 10px;
   transition: all 1s;
 `;

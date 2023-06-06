@@ -20,7 +20,6 @@ const Swipe = function ({ setIsOpened, setIsActive, opened }) {
   const location = useLocation();
   const url = location.pathname;
 
-  console.log(url);
   const credentialsData = CredentialsData();
 
   const activeHandler = (e) => {
