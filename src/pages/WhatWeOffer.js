@@ -47,7 +47,15 @@ const WhatWeOffer = ({ setIsActive, active }) => {
           <AnimatePresence>
             {filtered.map((el) => {
               return (
-                <Link to={`tjenester/${el.url}`}>
+                <Link
+                  to={`tjenester/${el.url}`}
+                  layout
+                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  key={el.title}
+                >
                   <Item
                     onClick={linkHandler}
                     ref={ref}

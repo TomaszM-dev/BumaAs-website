@@ -70,10 +70,11 @@ const Content = styled(motion.div)`
 `;
 
 const SideNav = styled(motion.div)`
-  flex: 0 0 26%;
+  flex: 0 0 25%;
+
   background: white;
   display: flex;
-  box-shadow: 0 0 0.4rem #d5d3d3;
+  box-shadow: 0 0 1.4rem #d5d3d3;
   align-items: center;
   justify-content: center;
 
@@ -81,6 +82,7 @@ const SideNav = styled(motion.div)`
     margin-right: 2rem;
     width: 2.5rem;
     align-self: center;
+    position: relative;
   }
 
   li {
@@ -92,6 +94,7 @@ const SideNav = styled(motion.div)`
       font-size: 1.3rem;
       font-weight: 00;
       padding: 1.4rem;
+      position: relative;
     }
 
     &:hover {
@@ -118,7 +121,7 @@ const Container = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 90%;
-  background: #e3e3e3;
+  /* background: #e3e3e3; */
 `;
 
 const Page = styled(motion.div)`
