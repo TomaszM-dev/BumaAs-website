@@ -45,6 +45,7 @@ const WhatWeDo = function () {
             {tabTitles.map((el) => {
               return (
                 <li
+                  key={el.title}
                   onClick={activeHandler}
                   className={
                     active[0].title === el.toLocaleString() ? "active" : ""

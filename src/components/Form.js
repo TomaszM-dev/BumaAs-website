@@ -9,19 +9,19 @@ const Form = () => {
       <img src={logoBlue} alt="" />
       <form>
         <div className="form-group">
-          <label for="name"></label>
+          <label htmlFor="name"></label>
           <input type="name" id="name" placeholder="Navn*:" />
         </div>
         <div className="form-group">
-          <label for="email"></label>
+          <label htmlFor="email"></label>
           <input type="email" id="email" placeholder="Email*:" />
         </div>
         <div className="form-group">
-          <label for="telephone"></label>
+          <label htmlFor="telephone"></label>
           <input type="number" id="telephone" placeholder="Telefon:" />
         </div>
         <div className="form-group">
-          <label for="description"></label>
+          <label htmlFor="description"></label>
           <textarea
             name="description"
             id="description"

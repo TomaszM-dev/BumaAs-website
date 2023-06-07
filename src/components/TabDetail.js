@@ -8,16 +8,15 @@ const TabDetail = ({ title, icon, information }) => {
   return (
     <Container
       key="box"
-      layout
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       className="box"
     >
-      <FontAwesomeIcon icon={faUsers} layout className="icon" />
-      <motion.h3 layout>{title}</motion.h3>
-      <motion.p layout>{information}</motion.p>
+      <FontAwesomeIcon icon={faUsers} className="icon" />
+      <motion.h3>{title}</motion.h3>
+      <motion.p>{information}</motion.p>
     </Container>
   );
 };

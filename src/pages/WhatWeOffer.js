@@ -39,7 +39,7 @@ const WhatWeOffer = ({ setIsActive, active }) => {
           activeCategory={activeCategory}
         />
         <Items
-          layout
+          layout="true"
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           exit={{ opacity: 0 }}
@@ -49,7 +49,6 @@ const WhatWeOffer = ({ setIsActive, active }) => {
               return (
                 <Link
                   to={`tjenester/${el.url}`}
-                  layout
                   animate={{ opacity: 1 }}
                   initial={{ opacity: 0 }}
                   exit={{ opacity: 0 }}
@@ -59,7 +58,7 @@ const WhatWeOffer = ({ setIsActive, active }) => {
                   <Item
                     onClick={linkHandler}
                     ref={ref}
-                    layout
+                    layout="true"
                     animate={{ opacity: 1 }}
                     initial={{ opacity: 0 }}
                     exit={{ opacity: 0 }}

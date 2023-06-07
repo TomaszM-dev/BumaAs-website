@@ -55,7 +55,12 @@ const Swipe = function ({ setIsOpened, setIsActive, opened }) {
     >
       {credentialsData.map((el) => {
         return (
-          <SwiperSlide onClick={activeHandler} id={el.title} url={el.url}>
+          <SwiperSlide
+            onClick={activeHandler}
+            key={el.title}
+            id={el.title}
+            url={el.url}
+          >
             <Link to={el.url}>
               <div id={el.url}>
                 <img src={el.image} id={el.title} alt="" />
