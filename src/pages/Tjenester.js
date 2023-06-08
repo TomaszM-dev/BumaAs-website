@@ -15,6 +15,7 @@ const Tjenester = ({ active, setIsActive }) => {
   // const [active, setIsActive] = useState([tjenesterData[0]]);
 
   const activeHandler = (e) => {
+    console.log(e.target);
     const current = tjenesterData.filter(
       (el) => el.title === e.target.dataset.set
     );

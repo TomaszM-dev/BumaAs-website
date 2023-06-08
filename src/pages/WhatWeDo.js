@@ -56,9 +56,9 @@ const WhatWeDo = function () {
                 </li>
               );
             })}
+            <TabIndicator ref={tabRef}></TabIndicator>
           </ul>
         </TabNav>
-        <TabIndicator ref={tabRef}></TabIndicator>
         <AnimatePresence>
           {active.map((el) => {
             return (
@@ -87,13 +87,14 @@ const TabIndicator = styled(motion.div)`
   height: 5.5rem;
   background: blue;
   color: white;
-  top: 5.6rem;
-  left: 23.3rem;
+  top: 1.5rem;
+  right: 0;
   border-radius: 10px;
   transition: all 1s;
 `;
 const TabNav = styled(motion.div)`
   flex: 0 0 30%;
+  position: relative;
   font-size: 1.8rem;
   width: 100%;
   height: 80%;
@@ -137,7 +138,7 @@ const TabContainer = styled(motion.div)`
   height: 40rem;
   background: #ffffff;
   margin: 0 auto;
-  z-index: 1000;
+
   box-shadow: 0 0.2rem 3.8rem #bcbcbce6;
   border-radius: 2px;
   display: flex;

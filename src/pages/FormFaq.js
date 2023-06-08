@@ -17,7 +17,7 @@ const FormFaq = () => {
 };
 
 const Bg = styled(motion.div)`
-  height: 100vh;
+  height: 105vh;
 
   position: relative;
   object-fit: cover;
@@ -50,7 +50,7 @@ const Bg = styled(motion.div)`
 const Container = styled(motion.div)`
   backface-visibility: hidden;
   display: flex;
-  height: 80%;
+  height: 75%;
   width: 80%;
   margin: auto;
   padding-top: 10rem;

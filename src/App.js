@@ -38,6 +38,11 @@ function App() {
         />
         <Route path="/prosjekter" exact element={<Prosjekter></Prosjekter>} />
         <Route
+          path="/prosjekter/:id"
+          exact
+          element={<Prosjekter></Prosjekter>}
+        />
+        <Route
           path="/tjenester"
           exact
           element={

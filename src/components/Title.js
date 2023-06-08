@@ -14,7 +14,6 @@ const Title = function ({ title }) {
 const Headline = styled(motion.div)`
   position: relative;
   display: inline-block;
-  z-index: 1000;
 
   img {
     width: 25rem;

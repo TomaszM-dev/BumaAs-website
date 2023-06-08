@@ -1,90 +1,125 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 import logo from "../img/utilities/buma-logo-white.png";
+import wave from "../img/utilities/footer-img.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <Container>
-      <img src={logo} alt="" />
-      <Content>
-        <Contact>
-          <h4>Kontakt Oss</h4>
-          <p>Så kan vi drøfte ditt behov for oppussing</p>
-          <p>+47 406 25 620</p>
-          <p>tilbud@buma.no</p>
-        </Contact>
-        <Line></Line>
-        <Contact>
-          <h4>Adresse</h4>
-          <p className="address">Nedre Rælingsveg 136, 2005 Rælingen</p>
-        </Contact>
-      </Content>
+    <FooterStyle>
+      <Container>
+        <Waves>
+          <Wave1></Wave1>
+        </Waves>
+
+        <img src={logo} alt="" />
+        <ContactContainer>
+          <Contact>
+            <FontAwesomeIcon
+              className=".
+          icon"
+              icon={faPhone}
+            />
+            <p> +47 406 25 620</p>
+          </Contact>
+          <Contact>
+            <FontAwesomeIcon className="icon" icon={faEnvelope} />
+            <p>tilbud@buma.no</p>
+          </Contact>
+          <Contact>
+            <FontAwesomeIcon className="icon" icon={faLocationDot} />
+            <p>Nedre Rælingsveg 136 </p>
+            <p>2005 Rælingsveg</p>
+          </Contact>
+        </ContactContainer>
+      </Container>
       <Foot>
         <p>BUMA © 2023 | Personvernerklæring | SITE BY TM-DEV</p>
       </Foot>
-    </Container>
+    </FooterStyle>
   );
 };
+
+const Contact = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 3rem;
+  justify-content: center;
+  border-left: 1px solid #bcbcbc;
+  padding-left: 3rem;
+
+  .icon {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    padding: 1rem;
+  }
+
+  p {
+    padding: 0;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 500;
+  }
+`;
+const Waves = styled(motion.div)``;
+const FooterStyle = styled(motion.div)`
+  background: #040482;
+  margin-top: 1rem;
+`;
+const ContactContainer = styled(motion.div)`
+  display: flex;
+  margin-left: 7rem;
+  /* flex: 1; */
+`;
+
+const WaveShared = styled(motion.div)`
+  position: absolute;
+  top: -100px;
+  left: 1.4rem;
+  width: 100%;
+  height: 10rem;
+  background: url(${wave});
+  background-size: 1500px 125px;
+  margin-left: -1.5rem;
+`;
+
+const Wave1 = styled(WaveShared)`
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+`;
+
+const Container = styled(motion.div)`
+  width: 100%;
+  position: relative;
+  height: 20rem;
+  padding: 2rem 5rem;
+  display: flex;
+
+  align-items: start;
+  justify-content: center;
+
+  img {
+    flex: 0 0 20%;
+    /* align-self: center; */
+    width: 24rem;
+  }
+`;
 
 const Foot = styled(motion.div)`
   height: 7rem;
   color: #b0afaf;
   border-top: 1px solid #fff;
-  /* width: 80%; */
-`;
-
-const Contact = styled(motion.div)`
-  flex: 0 0 32%;
-  p {
-    padding: 0.5rem;
-    color: #989898;
-    font-size: 1.7rem;
-  }
-
-  h4 {
-    margin-bottom: 1rem;
-  }
-
-  .address {
-    margin-top: 3rem;
-  }
-`;
-
-const Line = styled(motion.div)`
-  background: white;
-  width: 0.1rem;
-  height: 12rem;
-  align-self: center;
-`;
-
-const Content = styled(motion.div)`
-  h4 {
-    font-size: 2.3rem;
-    text-transform: uppercase;
-  }
-
-  padding: 2rem;
-  width: 70%;
-  color: white;
-  display: flex;
-
-  justify-content: space-between;
-`;
-
-const Container = styled(motion.div)`
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  margin-top: -9rem;
-  height: 45rem;
-  clip-path: polygon(50% 18%, 100% 0, 100% 100%, 0 100%, 0 0);
-  background: #040482;
-
-  img {
-    width: 16rem;
-  }
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 `;
 
 export default Footer;
