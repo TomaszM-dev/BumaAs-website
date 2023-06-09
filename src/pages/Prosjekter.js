@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import ProjectsData from "../Data/ProjectsData";
@@ -64,23 +64,30 @@ const Prosjekter = () => {
           })}
         </Projects>
       </Container>
-      {active &&
-        opened?.map((el) => {
-          return (
-            <ProsjekterDetails
-              setIsActive={setIsActive}
-              setIsOpened={setIsOpened}
-              key={el.id}
-              title={el.title}
-              about={el.about}
-              image={el.image}
-              referancer={el.referancer}
-              paragraph={el.paragraph}
-              paragraph1={el.paragraph1}
-              opened={opened}
-            />
-          );
-        })}
+      <AnimatePresence>
+        {active &&
+          opened?.map((el) => {
+            return (
+              <ProsjekterDetails
+                layout
+                animate={{ scale: 1 }}
+                initial={{ scale: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                setIsActive={setIsActive}
+                setIsOpened={setIsOpened}
+                key={el.id}
+                title={el.title}
+                about={el.about}
+                image={el.image}
+                referancer={el.referancer}
+                paragraph={el.paragraph}
+                paragraph1={el.paragraph1}
+                opened={opened}
+              />
+            );
+          })}
+      </AnimatePresence>
       <FormFaq />
       <Footer />
     </Page>

@@ -17,7 +17,6 @@ const MainPage = ({ setIsActive, active }) => {
       <Credentials />
       <ContactUs />
       <FormFaq />
-      <Footer />
     </>
   );
 };

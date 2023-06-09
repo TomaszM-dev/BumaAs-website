@@ -2,17 +2,12 @@ import Nav from "../components/Nav";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import TjenesterData from "../Data/TjenesterData";
-import { useRef, useState } from "react";
-
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import TjenesterDetails from "../components/TjenesterDetails";
 
 const Tjenester = ({ active, setIsActive }) => {
   const tjenesterData = TjenesterData();
   console.log(active);
-
-  // const [active, setIsActive] = useState([tjenesterData[0]]);
 
   const activeHandler = (e) => {
     console.log(e.target);
@@ -55,9 +50,22 @@ const Tjenester = ({ active, setIsActive }) => {
         <Content>
           {active?.map((el) => {
             return (
-              <div>
-                <h3>{el.title}</h3>
-              </div>
+              <TjenesterDetails
+                key={el.title}
+                title={el.title}
+                headline1={el.headline1}
+                headline2={el.headline2}
+                headline3={el.headline3}
+                headline4={el.headline4}
+                headline5={el.headline5}
+                paragraph1={el.paragraph1}
+                paragraph2={el.paragraph2}
+                paragraph3={el.paragraph3}
+                paragraph4={el.paragraph4}
+                paragraph5={el.paragraph5}
+                imgD={el.imgD}
+                imgD2={el.imgD2}
+              ></TjenesterDetails>
             );
           })}
         </Content>
@@ -67,17 +75,21 @@ const Tjenester = ({ active, setIsActive }) => {
 };
 
 const Content = styled(motion.div)`
-  flex: 1;
+  /* width: 70%; */
+  margin-left: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: right;
 `;
 
 const SideNav = styled(motion.div)`
-  flex: 0 0 25%;
+  max-width: 25rem;
+  height: 100%;
 
   background: white;
   display: flex;
+  position: fixed;
   box-shadow: 0 0 1.4rem #d5d3d3;
-  align-items: center;
-  justify-content: center;
 
   img {
     margin-right: 2rem;
@@ -122,16 +134,16 @@ const Container = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 90%;
-  /* background: #e3e3e3; */
 `;
 
 const Page = styled(motion.div)`
   flex-direction: column;
+  justify-self: flex-end;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
+  /* height: 100vh; */
 `;
 
 export default Tjenester;

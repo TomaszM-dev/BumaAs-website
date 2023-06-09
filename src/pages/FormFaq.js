@@ -4,6 +4,7 @@ import logoBlue from "../img/utilities/buma-logo-blue.png";
 import hero from "../img/utilities/buma-hero.avif";
 import Form from "../components/Form";
 import FaqSection from "../components/FaqSection";
+import Footer from "../components/Footer";
 
 const FormFaq = () => {
   return (
@@ -12,15 +13,17 @@ const FormFaq = () => {
         <Form />
         <FaqSection />
       </Container>
+      <Footer />
     </Bg>
   );
 };
 
 const Bg = styled(motion.div)`
-  height: 105vh;
+  height: auto;
 
   position: relative;
   object-fit: cover;
+  width: 100%;
 
   &:before {
     content: "";
@@ -50,11 +53,12 @@ const Bg = styled(motion.div)`
 const Container = styled(motion.div)`
   backface-visibility: hidden;
   display: flex;
-  height: 75%;
+  /* flex-wrap: wrap; */
+  height: 80%;
   width: 80%;
   margin: auto;
   padding-top: 10rem;
-
+  margin-bottom: 20rem;
   justify-content: space-between;
 `;
 

@@ -18,16 +18,24 @@ const ProsjekterDetails = ({
 
   const exitDetailHandler = (e) => {
     const element = e.target;
-    if (element.classList.contains("shadow")) {
+    if (element.classList.contains("shadow2")) {
       document.body.style.overflow = "auto";
       setIsActive(false);
       setIsOpened("");
       location("/prosjekter");
+    } else {
     }
   };
 
   return (
-    <CardShadow className="shadow" onClick={exitDetailHandler}>
+    <CardShadow
+      className="shadow2"
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      onClick={exitDetailHandler}
+    >
       <Container
         style={{
           background: `url(${image})`,
@@ -50,14 +58,36 @@ const ProsjekterDetails = ({
             <img src={referancer} alt="" />
           </Imgs>
         </Content>
+        <ImagesContainer>
+          <img src={image} alt="" />
+          <img className="ref" src={referancer} alt="" />
+        </ImagesContainer>
       </Container>
     </CardShadow>
   );
 };
 
+const ImagesContainer = styled(motion.div)`
+  background: black;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  img {
+    height: 70rem;
+    object-fit: cover;
+  }
+
+  .ref {
+    height: 100rem;
+  }
+
+  /* overflow: scroll; */
+`;
+
 const Content = styled(motion.div)`
   margin-top: 3rem;
   display: flex;
+  /* overflow: scroll; */
   height: 100%;
   width: 100%;
   justify-content: space-around;
@@ -117,14 +147,15 @@ const TitleContainer = styled(motion.div)`
 `;
 const Container = styled(motion.div)`
   width: 80%;
-  height: 80%;
+  height: 85%;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
   display: flex;
+  overflow: scroll;
   flex-direction: column;
-
+  z-index: 1000;
   transform: translate(-50%, -45%);
 
   &:before {
@@ -146,9 +177,10 @@ const CardShadow = styled(motion.div)`
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
-  overflow: hidden;
+  overflow: scroll;
   z-index: 10;
   top: 0;
+  z-index: 1000;
   left: 0;
 `;
 export default ProsjekterDetails;

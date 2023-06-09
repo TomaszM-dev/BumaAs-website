@@ -13,14 +13,17 @@ const Title = function ({ title }) {
 
 const Headline = styled(motion.div)`
   position: relative;
-  display: inline-block;
+  max-height: fit-content;
+  width: 100%;
 
   img {
-    width: 25rem;
+    max-width: 30rem;
+    max-height: 10rem;
   }
 
   h3 {
     position: absolute;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

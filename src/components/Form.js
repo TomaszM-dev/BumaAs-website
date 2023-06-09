@@ -41,7 +41,7 @@ const FormStyle = styled(motion.div)`
   border-radius: 10px;
   background: #ffffffb3;
   z-index: 10;
-
+  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;

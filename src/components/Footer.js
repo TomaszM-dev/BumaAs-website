@@ -70,12 +70,16 @@ const Contact = styled(motion.div)`
 `;
 const Waves = styled(motion.div)``;
 const FooterStyle = styled(motion.div)`
+  position: relative;
   background: #040482;
+  width: 100%;
   margin-top: 1rem;
+  z-index: 1000;
 `;
 const ContactContainer = styled(motion.div)`
   display: flex;
   margin-left: 7rem;
+  flex-wrap: wrap;
   /* flex: 1; */
 `;
 
@@ -86,7 +90,7 @@ const WaveShared = styled(motion.div)`
   width: 100%;
   height: 10rem;
   background: url(${wave});
-  background-size: 1500px 125px;
+
   margin-left: -1.5rem;
 `;
 
@@ -99,10 +103,10 @@ const Wave1 = styled(WaveShared)`
 const Container = styled(motion.div)`
   width: 100%;
   position: relative;
-  height: 20rem;
+
   padding: 2rem 5rem;
   display: flex;
-
+  flex-wrap: wrap;
   align-items: start;
   justify-content: center;
 
