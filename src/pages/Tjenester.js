@@ -4,6 +4,7 @@ import styled from "styled-components";
 import TjenesterData from "../Data/TjenesterData";
 import { Link } from "react-router-dom";
 import TjenesterDetails from "../components/TjenesterDetails";
+import ScrollTop from "../components/ScrollTop";
 
 const Tjenester = ({ active, setIsActive }) => {
   const tjenesterData = TjenesterData();
@@ -70,6 +71,7 @@ const Tjenester = ({ active, setIsActive }) => {
           })}
         </Content>
       </Container>
+      <ScrollTop></ScrollTop>
     </Page>
   );
 };

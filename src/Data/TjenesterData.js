@@ -16,7 +16,6 @@ import vask_fasade from "../img/tjenester/vask_fasade.png";
 // IMAGES
 import vaskFasade from "../img/TjenesterDetails/vaskFasade.png";
 import vaskFasade2 from "../img/TjenesterDetails/vaskFasade2.png";
-import { m } from "framer-motion";
 
 export const TjenesterData = () => {
   return [

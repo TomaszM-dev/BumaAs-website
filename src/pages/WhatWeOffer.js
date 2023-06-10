@@ -143,7 +143,10 @@ const Item = styled(motion.div)`
 
 const TitleContainer = styled(motion.div)`
   padding-top: 8rem;
+  position: relative;
   margin-bottom: 3rem;
+  h3 {
+  }
 `;
 
 const Links = styled(motion.div)`

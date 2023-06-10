@@ -14,19 +14,22 @@ const Title = function ({ title }) {
 const Headline = styled(motion.div)`
   position: relative;
   max-height: fit-content;
-  width: 100%;
-
+  width: fit-content;
+  display: flex;
+  justify-content: center;
   img {
-    max-width: 30rem;
+    max-width: 34rem;
     max-height: 10rem;
   }
 
   h3 {
     position: absolute;
-
     top: 50%;
+    /* padding: 0 3rem; */
+    /* width: 100%; */
     left: 50%;
     transform: translate(-50%, -50%);
+
     color: white;
     font-size: 1.5rem;
     text-transform: uppercase;

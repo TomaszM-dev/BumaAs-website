@@ -53,6 +53,7 @@ const Bg = styled(motion.div)`
 const Container = styled(motion.div)`
   backface-visibility: hidden;
   display: flex;
+
   /* flex-wrap: wrap; */
   height: 80%;
   width: 80%;

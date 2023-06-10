@@ -7,6 +7,8 @@ import MainPage from "./pages/MainPage";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Tjenester from "./pages/Tjenester";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { pageAnimation } from "./animations";
 
 import TjenesterData from "./Data/TjenesterData";
 
@@ -56,8 +58,22 @@ function App() {
             <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
           }
         />
-        <Route path="/omuss" exact element={<OmUss></OmUss>} />
+        <Route
+          path="/omuss"
+          exact
+          element={
+            <motion.div
+              variants={pageAnimation}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+            >
+              <OmUss></OmUss>
+            </motion.div>
+          }
+        />
         <Route path="/blogg" exact element={<Blogg></Blogg>} />
+        <Route path="/blogg/:id" exact element={<Blogg></Blogg>} />
       </Routes>
     </div>
   );

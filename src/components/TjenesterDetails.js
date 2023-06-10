@@ -60,7 +60,8 @@ const TitleContainer = styled(motion.div)`
   width: 100%;
   align-self: center;
   height: 10rem;
-
+  display: flex;
+  justify-content: center;
   position: relative;
   height: 40rem;
 
@@ -74,6 +75,7 @@ const TitleContainer = styled(motion.div)`
   }
 
   div {
+    width: 100%;
     z-index: 1;
   }
 `;
