@@ -1,15 +1,13 @@
 import GlobalStyle from "./components/GlobalStyle";
-
 import OmUss from "./pages/OmUss";
 import Blogg from "./pages/Blogg";
 import Prosjekter from "./pages/Prosjekter";
 import MainPage from "./pages/MainPage";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Tjenester from "./pages/Tjenester";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { pageAnimation } from "./animations";
-
 import TjenesterData from "./Data/TjenesterData";
 
 function App() {

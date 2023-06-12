@@ -91,6 +91,40 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
+  // pulse animation
+  .pulse {
+  @include respond(tab-land) {
+    display: none;
+  }
+
+  border-radius: 10px;
+  position: absolute;
+  z-index: 10;
+
+  top: 50rem;
+  right: -5rem;
+  width: 8px;
+  height: 8px;
+
+  &::before {
+    z-index: 10;
+    content: "";
+    display: block;
+    background-color: #08eb04;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 1.8rem;
+    right: 10.6rem;
+
+    height: 9px;
+    width: 9px;
+    transform: scale(1);
+    animation: pulse-fade 2s infinite;
+  }
+}
+  
+
 
   // swiper style
 

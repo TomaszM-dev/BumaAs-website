@@ -59,6 +59,6 @@ const WaveSvg = styled.svg`
 
   width: 100%;
 
-  left: 0;
+  left: 0rem;
 `;
 export default Wave;
