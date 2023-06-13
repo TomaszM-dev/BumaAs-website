@@ -8,6 +8,7 @@ import PulseAnimation from "../components/PulseAnimation";
 import { useState } from "react";
 import hero from "../img/utilities/buma-hero.avif";
 import Footer from "../components/Footer";
+import ImageGallery from "../components/ImageGallery";
 
 const OmUss = () => {
   const [active, setIsActive] = useState("false");
@@ -93,16 +94,24 @@ const OmUss = () => {
             forslag til post@buma.no
           </p>
           <ul>
-            <li>1. Fast pris</li>
-            <li>2. Ingen underleverandorer</li>
-            <li>3. Punktilgher</li>
-            <li>4. Samarabeid med ledende prosenter</li>
+            <li>
+              <span>1.</span> Fast pris
+            </li>
+            <li>
+              <span>2.</span> Ingen underleverandorer
+            </li>
+            <li>
+              <span>3.</span> Punktilgher
+            </li>
+            <li>
+              <span>4.</span> Samarabeid med ledende prosenter
+            </li>
           </ul>
         </div>
       </Hero>
-      {/* <FooterStyle>
-        <Footer />
-      </FooterStyle> */}
+      <ImageGallery />
+
+      <Footer />
     </>
   );
 };
