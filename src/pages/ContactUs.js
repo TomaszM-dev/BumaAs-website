@@ -48,9 +48,9 @@ const ContactUs = () => {
 };
 
 const Container = styled(motion.div)`
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   width: 100%;
-  height: 80vh;
+  height: 100%;
   padding: 5rem;
 
   h1 {

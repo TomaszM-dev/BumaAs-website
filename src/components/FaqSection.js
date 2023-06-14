@@ -50,6 +50,7 @@ const Faq = styled(motion.div)`
   color: white;
   overflow: scroll;
   width: 36rem;
+  height: 50rem;
 
   /* backface-visibility: hidden; */
 

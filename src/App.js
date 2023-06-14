@@ -9,6 +9,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { pageAnimation } from "./animations";
 import TjenesterData from "./Data/TjenesterData";
+import KontactUs from "./pages/KontactUs";
+import Referencer from "./pages/Referenser";
 
 function App() {
   const tjenesterData = TjenesterData();
@@ -70,8 +72,12 @@ function App() {
             </motion.div>
           }
         />
+        <Route path="/omuss/:id" exact element={<OmUss></OmUss>} />
+        <Route path="/referenser" exact element={<Referencer />} />
+        <Route path="/referenser/:id" exact element={<Referencer />} />
         <Route path="/blogg" exact element={<Blogg></Blogg>} />
         <Route path="/blogg/:id" exact element={<Blogg></Blogg>} />
+        <Route path="/kontact-us" exact element={<KontactUs></KontactUs>} />
       </Routes>
     </div>
   );

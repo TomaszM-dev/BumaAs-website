@@ -30,7 +30,7 @@ const Nav = () => {
       <Navbar className={background ? "bg-blue" : ""}>
         <Links>
           <Link to="/omuss">Om Oss</Link>
-          <Link to="/contactus">Contact Us</Link>
+          <Link to="/kontact-us">Contact Us</Link>
           <Link to="/referenser">Referenser</Link>
         </Links>
 

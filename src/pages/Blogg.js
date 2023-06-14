@@ -113,7 +113,8 @@ const NavTop = styled(motion.div)`
   width: 100%;
   height: 9.1rem;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 9rem;
+
   .nav {
   }
 `;
@@ -127,9 +128,9 @@ const Items = styled(motion.div)`
 const Container = styled(motion.div)`
   width: 100%;
   display: flex;
-
   flex-direction: column;
   align-items: center;
+  /* height: 110vh; */
 `;
 
 export default Blogg;

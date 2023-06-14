@@ -9,10 +9,13 @@ import { useState } from "react";
 import hero from "../img/utilities/buma-hero.avif";
 import Footer from "../components/Footer";
 import ImageGallery from "../components/ImageGallery";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Title from "../components/Title";
+import ImageGalleryData from "../Data/ImageGalleryData";
 
 const OmUss = () => {
   const [active, setIsActive] = useState("false");
-
   const activeHandler = (e) => {
     setIsActive(true);
   };
@@ -26,6 +29,31 @@ const OmUss = () => {
     }
   };
 
+  const imageData = ImageGalleryData();
+  const title = "Image Gallery";
+  const location = useNavigate();
+
+  const [activePhoto, setIsActivePhoto] = useState(false);
+  const [opened, setIsOpened] = useState("");
+
+  const activePhotoHandler = (e) => {
+    setIsActivePhoto(true);
+    console.log(e.target.dataset.set);
+    console.log(active);
+
+    const current = imageData.filter((el) => el.id === +e.target.dataset.set);
+    console.log(current);
+    setIsOpened(current);
+  };
+
+  const exitPhotoHandler = (e) => {
+    const element = e.target;
+    if (element.classList.contains("shadow2")) {
+      document.body.style.overflow = "auto";
+      setIsActivePhoto(false);
+    } else {
+    }
+  };
   return (
     <>
       <NavTop>
@@ -109,16 +137,38 @@ const OmUss = () => {
           </ul>
         </div>
       </Hero>
-      <ImageGallery />
+      <ContainerPhoto>
+        <TitleContainer>
+          <Title title={title} />
+        </TitleContainer>
+        <Pictures>
+          {imageData.map((el, index) => {
+            return (
+              <Picture
+                onClick={activePhotoHandler}
+                key={index}
+                className={`image${el.id} `}
+                data-set={el.id}
+              >
+                <img data-set={el.id} src={el.img} alt="" />
+              </Picture>
+            );
+          })}
+          {activePhoto &&
+            opened?.map((el) => {
+              return (
+                <CardShadowPhoto className="shadow2" onClick={exitPhotoHandler}>
+                  <img src={el.img} alt="" />
+                </CardShadowPhoto>
+              );
+            })}
+        </Pictures>
+      </ContainerPhoto>
 
       <Footer />
     </>
   );
 };
-
-const FooterStyle = styled(motion.div)`
-  margin-top: -5rem;
-`;
 
 const Hero = styled(motion.div)`
   margin-top: 7rem;
@@ -218,6 +268,27 @@ const CardShadow = styled(motion.div)`
   z-index: 1000;
   left: 0;
 `;
+const CardShadowPhoto = styled(motion.div)`
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  overflow: scroll;
+  z-index: 10;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+
+  img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    height: 50rem;
+    width: 70rem;
+
+    transform: translate(-50%, -50%);
+  }
+`;
 
 const NavTop = styled(motion.div)`
   width: 100%;
@@ -290,6 +361,85 @@ const Image = styled(motion.div)`
 
 const Hide = styled.div`
   overflow: hidden;
+`;
+
+const TitleContainer = styled(motion.div)`
+  align-self: center;
+  margin: 4rem;
+`;
+
+const Picture = styled(motion.div)`
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0.3rem 0.9rem #7e7e7e;
+  border-radius: 5px;
+  transition: all 1s;
+  height: 28rem;
+  overflow: hidden;
+  img {
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+    transition: all 1s;
+  }
+
+  &:hover img {
+    transform: scale(1.3);
+  }
+`;
+
+const Pictures = styled(motion.div)`
+  cursor: pointer;
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-gap: 1.4rem;
+
+  .image1 {
+    width: 100%;
+    grid-area: 1/1/3/3;
+  }
+
+  .image2 {
+    width: 100%;
+    grid-area: 1/3/2/4;
+  }
+
+  .image3 {
+    grid-area: 2/1/2/2;
+  }
+  .image4 {
+    grid-area: 1/4/3/4;
+    img {
+      height: 100%;
+    }
+    height: 100%;
+    background: blue;
+  }
+  .image5 {
+    grid-area: 2/2/2/4;
+  }
+  .image6 {
+    grid-area: 3/1/3/3;
+  }
+  .image7 {
+    grid-area: 3/4/3/4;
+  }
+  .image8 {
+    grid-area: 3/3/3/4;
+  }
+`;
+
+const ContainerPhoto = styled(motion.div)`
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default OmUss;

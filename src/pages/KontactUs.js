@@ -1,0 +1,129 @@
+import ContactUs from "./ContactUs";
+import Nav from "../components/Nav";
+import { motion } from "framer-motion";
+import styled, { keyframes } from "styled-components";
+import FormFaq from "../pages/FormFaq";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faBusinessTime,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+
+const KontactUs = () => {
+  return (
+    <>
+      <NavTop>
+        <Nav className="nav" />
+      </NavTop>
+      <ContactUsContainer>
+        <ContactUs />
+      </ContactUsContainer>
+      <Content>
+        <CardContainer>
+          <Card className="card1">
+            <FontAwesomeIcon
+              className="icon"
+              icon={faLocationDot}
+            ></FontAwesomeIcon>
+            <h3>Adresse</h3>
+            <p>Nedre Realingsveg 136 </p>
+            <p>2005 Realingen </p>
+          </Card>
+          <Card className="card2">
+            <FontAwesomeIcon
+              className="icon"
+              icon={faBusinessTime}
+            ></FontAwesomeIcon>
+            <h3>Åpningstider</h3>
+            <p>Man - Fre 08:00 - 16:00 </p>
+          </Card>
+          <Card className="card3">
+            <FontAwesomeIcon
+              className="icon"
+              icon={faEnvelope}
+            ></FontAwesomeIcon>
+            <h3>Email</h3>
+            <p>tilbud@buma.no</p>
+          </Card>
+        </CardContainer>
+        <h1>Bestill dato for oppussing av fasade eller trappeoppgang</h1>
+        <span>+47 406 25 620</span>
+      </Content>
+      <FormFaq></FormFaq>
+    </>
+  );
+};
+
+const ContactUsContainer = styled(motion.div)`
+  display: flex;
+  height: 71rem;
+  align-items: flex-start;
+`;
+const Card = styled(motion.div)`
+  border-radius: 10px 60px 10px 60px;
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  margin: 1.3em;
+  height: 25rem;
+  width: 30rem;
+  box-shadow: 0 0 1.8rem #bcbcbc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: blue;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.5rem;
+    padding: 0rem;
+  }
+`;
+
+const CardContainer = styled(motion.div)`
+  display: flex;
+  max-width: 98rem;
+  margin: -16rem 3rem;
+  height: 50rem;
+  align-items: start;
+`;
+
+const Content = styled(motion.div)`
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem auto;
+  width: 100%;
+  /* height: 70vh; */
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  span {
+    margin-top: 4rem;
+    font-size: 3.4rem;
+    border-bottom: 3px solid blue;
+    padding-bottom: 1rem;
+  }
+`;
+
+const NavTop = styled(motion.div)`
+  width: 100%;
+  height: 9.1rem;
+`;
+
+export default KontactUs;
