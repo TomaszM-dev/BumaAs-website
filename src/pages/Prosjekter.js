@@ -1,4 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import ProjectsData from "../Data/ProjectsData";

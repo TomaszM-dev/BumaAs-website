@@ -1,5 +1,6 @@
 import Title from "../components/Title";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import hero from "../img/utilities/buma-hero.avif";
 import { useState } from "react";

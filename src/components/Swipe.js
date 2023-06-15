@@ -61,7 +61,7 @@ const Swipe = function ({ setIsOpened, setIsActive, opened }) {
             id={el.title}
             url={el.url}
           >
-            <Link to={el.url}>
+            <Link to={el.url} key={el.title}>
               <div id={el.url}>
                 <img src={el.image} id={el.title} alt="" />
               </div>

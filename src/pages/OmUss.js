@@ -69,7 +69,7 @@ const OmUss = () => {
             </Hide>
 
             <Hide>
-              <motion.h2 variants={titleAnimation} c z>
+              <motion.h2 variants={titleAnimation}>
                 innen maling og oppussing.
               </motion.h2>
             </Hide>

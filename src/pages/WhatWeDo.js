@@ -1,16 +1,16 @@
 import Title from "../components/Title";
 import Wave from "../components/Wave";
-import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import TabDetail from "../components/TabDetail";
 import TabData from "../Data/TabData";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLink, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { useScroll } from "../components/useScroll";
 import { scrollReveal, titleAnimation } from "../animations";
 
-const WhatWeDo = function () {
+const WhatWeDo = function() {
   const [element, controls] = useScroll();
   const tabData = TabData();
   const [active, setIsActive] = useState([tabData[0]]);
@@ -66,7 +66,7 @@ const WhatWeDo = function () {
                 title={el.title}
                 icon={el.icon}
                 information={el.information}
-                key="box"
+                key={el.title}
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
                 exit={{ opacity: 0 }}
