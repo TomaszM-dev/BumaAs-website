@@ -5,7 +5,8 @@ import styled from "styled-components";
 import WaveOpinions from "../components/WaveOpinions";
 
 import CredentialsDetails from "../components/CredentialsDetails";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import Swipe from "../components/Swipe";
 
