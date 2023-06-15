@@ -28,21 +28,23 @@ const Nav = () => {
   return (
     <>
       <Navbar className={background ? "bg-blue" : ""}>
-        <Links>
-          <Link to="/omuss">Om Oss</Link>
-          <Link to="/kontact-us">Contact Us</Link>
-          <Link to="/referenser">Referenser</Link>
-        </Links>
+        <div>
+          <Links>
+            <Link to="/omuss">Om Oss</Link>
+            <Link to="/kontact-us">Contact Us</Link>
+            <Link to="/referenser">Referenser</Link>
+          </Links>
 
-        <Link to="/#home">
-          <img src={logo} alt="" />
-        </Link>
+          <Link to="/#home">
+            <img src={logo} alt="" />
+          </Link>
 
-        <Links>
-          <Link to="/tjenester">Tjenester</Link>
-          <Link to="/prosjekter">Prosjekter</Link>
-          <Link to="/blogg">Blogg</Link>
-        </Links>
+          <Links>
+            <Link to="/tjenester">Tjenester</Link>
+            <Link to="/prosjekter">Prosjekter</Link>
+            <Link to="/blogg">Blogg</Link>
+          </Links>
+        </div>
       </Navbar>
     </>
   );
@@ -52,13 +54,13 @@ const Navbar = styled(motion.div)`
   padding: 1rem 5rem;
   height: 9rem;
   width: 100%;
+
   position: fixed;
+  flex-grow: 0;
   top: 0;
   left: 0;
   z-index: 1000000;
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
+
   opacity: 0.9;
   transition: all 0.3s;
   background-color: #050572;
@@ -67,8 +69,15 @@ const Navbar = styled(motion.div)`
   }
 
   img {
-    /* margin-left: 7rem; */
     width: 17rem;
+  }
+
+  div {
+    display: flex;
+    margin: 0 auto;
+    max-width: 160rem;
+    align-items: start;
+    justify-content: space-between;
   }
 `;
 
