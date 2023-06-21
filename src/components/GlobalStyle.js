@@ -27,12 +27,18 @@ const GlobalStyle = createGlobalStyle`
 
   html{
     font-size: 75%;
-    /* @media(max-width:1400px){
+    @media(max-width:1400px){
     }
     @media(max-width:1300px){
+      font-size: 65%;
+
+    }
+    @media(max-width:1000px){
+      font-size: 60%;
+
+    }
 
 
-    } */
   }
 
 
@@ -255,7 +261,7 @@ color: blue;
 
 .swiper-pagination {
   position: relative;
-  width: 18rem !important;
+  width: 30rem !important;
   bottom: 1rem;
 }
 

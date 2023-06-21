@@ -6,10 +6,17 @@ import Credentials from "./Credentials";
 import ContactUs from "./ContactUs";
 import FormFaq from "./FormFaq";
 import Footer from "../components/Footer";
+import { pageAnimation } from "../animations";
+import { motion } from "framer-motion";
 
 const MainPage = ({ setIsActive, active }) => {
   return (
-    <>
+    <motion.div
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <Nav />
       <Home />
       <WhatWeDo />
@@ -17,7 +24,7 @@ const MainPage = ({ setIsActive, active }) => {
       <Credentials />
       <ContactUs />
       <FormFaq />
-    </>
+    </motion.div>
   );
 };
 

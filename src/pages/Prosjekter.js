@@ -91,7 +91,6 @@ const Prosjekter = () => {
           })}
       </AnimatePresence>
       <FormFaq />
-      <Footer />
     </Page>
   );
 };

@@ -6,14 +6,7 @@ import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { LayoutGroup } from "framer-motion";
 const TabDetail = ({ title, icon, information }) => {
   return (
-    <Container
-      key="box"
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-      className="box"
-    >
+    <Container key="box" className="box">
       <FontAwesomeIcon icon={faUsers} className="icon" />
       <motion.h3>{title}</motion.h3>
       <motion.p>{information}</motion.p>

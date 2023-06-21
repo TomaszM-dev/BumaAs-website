@@ -46,6 +46,11 @@ const FormStyle = styled(motion.div)`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 952px) {
+    margin-bottom: 10rem;
+    height: 55rem;
+  }
+
   img {
     width: 20rem;
     margin-top: 1.4rem;

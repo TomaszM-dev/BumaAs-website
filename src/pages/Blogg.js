@@ -96,6 +96,10 @@ const Item = styled(motion.div)`
   margin: 5rem 10rem;
   width: 30rem;
 
+  @media (max-width: 952px) {
+    width: 45rem;
+  }
+
   h1 {
     margin: 2rem 0;
   }
@@ -104,6 +108,11 @@ const Item = styled(motion.div)`
     width: 30rem;
     height: 20rem;
     border-radius: 10px;
+
+    @media (max-width: 952px) {
+      width: 45rem;
+      height: 30rem;
+    }
   }
 
   button {
@@ -125,6 +134,10 @@ const Items = styled(motion.div)`
   display: flex;
   align-items: center;
   z-index: 1000;
+
+  @media (max-width: 952px) {
+    flex-direction: column;
+  }
 `;
 
 const Container = styled(motion.div)`

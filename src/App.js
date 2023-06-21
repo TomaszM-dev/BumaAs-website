@@ -11,6 +11,8 @@ import { pageAnimation } from "./animations";
 import TjenesterData from "./Data/TjenesterData";
 import KontactUs from "./pages/KontactUs";
 import Referencer from "./pages/Referenser";
+import ScrollTop from "./components/ScrollTop";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const tjenesterData = TjenesterData();
@@ -19,66 +21,69 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <Routes>
-        <Route
-          path="/"
-          exact
-          element={
-            <>
-              <MainPage setIsActive={setIsActive} active={active} />
-            </>
-          }
-        />
-        <Route
-          path="/:id"
-          exact
-          element={
-            <>
-              <MainPage />
-            </>
-          }
-        />
-        <Route path="/prosjekter" exact element={<Prosjekter></Prosjekter>} />
-        <Route
-          path="/prosjekter/:id"
-          exact
-          element={<Prosjekter></Prosjekter>}
-        />
-        <Route
-          path="/tjenester"
-          exact
-          element={
-            <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
-          }
-        />
-        <Route
-          path="/tjenester/:id"
-          exact
-          element={
-            <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
-          }
-        />
-        <Route
-          path="/omuss"
-          exact
-          element={
-            <motion.div
-              variants={pageAnimation}
-              initial="hidden"
-              animate="show"
-              exit="exit"
-            >
-              <OmUss></OmUss>
-            </motion.div>
-          }
-        />
-        <Route path="/omuss/:id" exact element={<OmUss></OmUss>} />
-        <Route path="/referenser" exact element={<Referencer />} />
-        <Route path="/referenser/:id" exact element={<Referencer />} />
-        <Route path="/blogg" exact element={<Blogg></Blogg>} />
-        <Route path="/blogg/:id" exact element={<Blogg></Blogg>} />
-        <Route path="/kontact-us" exact element={<KontactUs></KontactUs>} />
-      </Routes>
+      <ScrollTop />
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <>
+                <MainPage setIsActive={setIsActive} active={active} />
+              </>
+            }
+          />
+          <Route
+            path="/:id"
+            exact
+            element={
+              <>
+                <MainPage />
+              </>
+            }
+          />
+          <Route path="/prosjekter" exact element={<Prosjekter></Prosjekter>} />
+          <Route
+            path="/prosjekter/:id"
+            exact
+            element={<Prosjekter></Prosjekter>}
+          />
+          <Route
+            path="/tjenester"
+            exact
+            element={
+              <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
+            }
+          />
+          <Route
+            path="/tjenester/:id"
+            exact
+            element={
+              <Tjenester setIsActive={setIsActive} active={active}></Tjenester>
+            }
+          />
+          <Route
+            path="/omuss"
+            exact
+            element={
+              <motion.div
+                variants={pageAnimation}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+              >
+                <OmUss></OmUss>
+              </motion.div>
+            }
+          />
+          <Route path="/omuss/:id" exact element={<OmUss></OmUss>} />
+          <Route path="/referenser" exact element={<Referencer />} />
+          <Route path="/referenser/:id" exact element={<Referencer />} />
+          <Route path="/blogg" exact element={<Blogg></Blogg>} />
+          <Route path="/blogg/:id" exact element={<Blogg></Blogg>} />
+          <Route path="/kontact-us" exact element={<KontactUs></KontactUs>} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }

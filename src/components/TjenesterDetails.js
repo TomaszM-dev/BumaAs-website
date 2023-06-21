@@ -50,7 +50,6 @@ const TjenesterDetails = ({
         <h1>{headline5}</h1>
         <p>{paragraph5}</p>
       </Section>
-      <FormFaq></FormFaq>
     </Container>
   );
 };

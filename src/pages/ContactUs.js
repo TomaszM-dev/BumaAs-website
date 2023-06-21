@@ -18,12 +18,10 @@ const ContactUs = () => {
   };
 
   return (
-    <Container
-      id="contact"
-      style={{
-        background: `linear-gradient(100deg, #ffffffe6 50%, rgba(0, 0, 0, 0)50%), url(${hero})`,
-      }}
-    >
+    <Container id="contact">
+      <Image>
+        <img src={hero} alt="" />
+      </Image>
       <Content>
         <Title title={title} />
         <h1>
@@ -47,16 +45,44 @@ const ContactUs = () => {
   );
 };
 
-const Container = styled(motion.div)`
-  /* margin-top: 5rem; */
+const Image = styled(motion.div)`
+  /* opacity: 0.6; */
+
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  padding: 5rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const Container = styled(motion.div)`
+  width: 100%;
+  position: relative;
+  height: 70rem;
+`;
+
+const Content = styled(motion.div)`
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #ffffffbd;
+  clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
 
   h1 {
     margin-top: 3rem;
     font-weight: 800;
     font-size: 2.3rem;
+    width: 80%;
     span {
       font-weight: 800;
     }
@@ -68,26 +94,15 @@ const Container = styled(motion.div)`
   }
 
   button {
-    width: 60%;
     padding: 2rem;
     font-size: 1.4rem;
-
-    margin-left: 10rem;
+    width: 100%;
     margin-top: 2rem;
 
     .icon {
       margin-left: 1rem;
     }
   }
-`;
-
-const Content = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  justify-content: start;
-  align-items: start;
-  height: 100%;
 `;
 
 export default ContactUs;

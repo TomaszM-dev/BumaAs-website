@@ -8,7 +8,7 @@ const CredentialsDetails = ({ active, opened, setIsActive, setIsOpened }) => {
   const location = useNavigate();
   const credentialsData = CredentialsData();
 
-  const current = credentialsData.find((el) => el.url === opened);
+  const current = credentialsData.find((el) => el.image);
   console.log(current);
 
   const exitDetailHandler = (e) => {

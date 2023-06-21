@@ -3,28 +3,41 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import hero from "../img/utilities/buma-hero.avif";
+import { titleAnimation, fade, photoAnim } from "../animations";
 
 const Home = () => {
   return (
     <HomeStyle id="home">
       <Hero>
         <Content>
-          <h1>
-            Vi realiserer ditt prosjekt til <span>avtalt pris</span> og tid.
-          </h1>
-          <h2>Velg oss og vi far jobben gjort!</h2>
+          <Hide>
+            <motion.h1 variants={titleAnimation}>
+              Vi realiserer ditt prosjekt til{" "}
+              <motion.span>avtalt pris</motion.span> og tid.
+            </motion.h1>
+          </Hide>
+
+          <Hide>
+            <motion.h2 variants={titleAnimation}>
+              Velg oss og vi far jobben gjort!
+            </motion.h2>
+          </Hide>
         </Content>
         <Reviews>
-          <Stars>
-            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-          </Stars>
+          <Hide>
+            <Stars variants={fade}>
+              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+            </Stars>
+          </Hide>
           <Score>
-            <p>4.9/5.0 50+</p>
-            <p>reviews</p>
+            <Hide>
+              <motion.p variants={fade}>4.9/5.0 50+</motion.p>
+              <motion.p variants={fade}>reviews</motion.p>
+            </Hide>
           </Score>
         </Reviews>
       </Hero>
@@ -36,6 +49,11 @@ const Home = () => {
 };
 
 export default Home;
+
+const Hide = styled.div`
+  overflow: hidden;
+  z-index: 100;
+`;
 
 const Hero = styled(motion.div)`
   width: 100%;
@@ -69,18 +87,6 @@ const Hero = styled(motion.div)`
     width: 100%;
     height: 100%;
   }
-`;
-
-const Content = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-
-  height: 100%;
-  width: 50%;
-  margin: 0 auto;
-
   h1 {
     margin-bottom: 3rem;
     z-index: 11;
@@ -98,6 +104,17 @@ const Content = styled(motion.div)`
     font-weight: 400;
     color: white;
   }
+`;
+
+const Content = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
 `;
 
 const Reviews = styled(motion.div)`

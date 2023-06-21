@@ -39,6 +39,7 @@ const ProsjekterDetails = ({
       <Container
         style={{
           background: `url(${image})`,
+          backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
         }}
       >
@@ -53,73 +54,43 @@ const ProsjekterDetails = ({
             <p>{paragraph}</p>
             <p>{paragraph1}</p>
           </About>
-          <Imgs>
-            <img src={image} alt="" />
-            <img src={referancer} alt="" />
-          </Imgs>
         </Content>
-        <ImagesContainer>
-          <img src={image} alt="" />
-          <img className="ref" src={referancer} alt="" />
-        </ImagesContainer>
       </Container>
     </CardShadow>
   );
 };
 
-const ImagesContainer = styled(motion.div)`
-  background: black;
-  height: 30rem;
-  display: flex;
-  flex-direction: column;
-  img {
-    height: 70rem;
-    object-fit: cover;
-  }
-
-  .ref {
-    height: 100rem;
-  }
-
-  /* overflow: scroll; */
-`;
-
 const Content = styled(motion.div)`
   margin-top: 3rem;
   display: flex;
   /* overflow: scroll; */
-  height: 100%;
+
   width: 100%;
   justify-content: space-around;
   align-items: start;
   z-index: 1000;
-`;
 
-const Imgs = styled(motion.div)`
-  /* background: white; */
-  height: 80%;
-  width: 40%;
-  display: flex;
-  border-radius: 10px;
-  flex-direction: column;
-
-  img {
-    width: 80%;
-    object-fit: cover;
-    border-radius: 10px;
-    height: 50%;
+  @media (max-width: 952px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 const About = styled(motion.div)`
-  margin: 0rem 5rem;
+  margin: 5rem 5rem;
   background: #ffffff97;
   height: 80%;
-  width: 40%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   padding: 3rem;
   border-radius: 8px;
+
+  @media (max-width: 952px) {
+    width: 80%;
+    height: 100%;
+  }
 
   h4 {
     color: blue;
@@ -147,7 +118,7 @@ const TitleContainer = styled(motion.div)`
 `;
 const Container = styled(motion.div)`
   width: 80%;
-  height: 85%;
+  height: 65%;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -169,6 +140,10 @@ const Container = styled(motion.div)`
     width: 100%;
     border-radius: 5px;
     transition: all 1s;
+
+    @media (max-width: 952px) {
+      height: 100%;
+    }
   }
 `;
 

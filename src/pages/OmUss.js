@@ -8,7 +8,7 @@ import PulseAnimation from "../components/PulseAnimation";
 import { useState } from "react";
 import hero from "../img/utilities/buma-hero.avif";
 import Footer from "../components/Footer";
-import ImageGallery from "../components/ImageGallery";
+
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
@@ -179,10 +179,14 @@ const Hero = styled(motion.div)`
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
+  height: 70rem;
   clip-path: polygon(0 0, 100% 10%, 100% 99%, 0 90%);
   position: relative;
   object-fit: cover;
+
+  @media (max-width: 952px) {
+    height: 100rem;
+  }
 
   &:before {
     content: "";
@@ -208,7 +212,17 @@ const Hero = styled(motion.div)`
     height: 100%;
   }
 
+  @media (max-width: 952px) {
+    flex-direction: column;
+    margin: 5rem 0;
+  }
+
   div {
+    @media (max-width: 952px) {
+      margin: 2rem;
+      max-width: 50rem;
+    }
+
     margin: 2rem;
     padding: 3rem;
     max-width: 37rem;
@@ -339,9 +353,13 @@ const Image = styled(motion.div)`
   position: relative;
   overflow: hidden;
   z-index: 2;
-  height: 70vh;
+  height: 70rem;
   border-radius: 10px;
   box-shadow: 0 0 1.4rem #000;
+
+  @media (max-width: 952px) {
+    margin: 10rem;
+  }
 
   img {
     width: 100%;
@@ -399,6 +417,13 @@ const Pictures = styled(motion.div)`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
   grid-gap: 1.4rem;
+
+  @media (max-width: 952px) {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 16rem;
+  }
 
   .image1 {
     width: 100%;

@@ -21,6 +21,7 @@ const Credentials = () => {
     <Container id="referenser">
       <WaveOpinions />
       <TitleContainer>
+        ``
         <Title title={title} />
         <h4>
           These are people how trusted us and were <span> really happy</span>{" "}
@@ -83,7 +84,7 @@ const Container = styled(motion.div)`
   position: relative;
   margin-top: 1rem;
   width: 100%;
-  height: 100vh;
+  height: 90rem;
 `;
 
 const TitleContainer = styled(motion.div)`

@@ -82,16 +82,46 @@ const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-self: right;
+
+  @media (max-width: 952px) {
+    margin-left: 5rem;
+  }
 `;
 
 const SideNav = styled(motion.div)`
-  max-width: 25rem;
+  width: 26rem;
   height: 100%;
-
+  overflow: hidden;
+  top: 9rem;
+  left: 0;
+  bottom: 0;
   background: white;
   display: flex;
   position: fixed;
+  transition: all 0.5s;
+  z-index: 1000;
+
+  @media (max-width: 952px) {
+    width: 8rem;
+    top: 5rem;
+
+    &:hover {
+      width: 23rem;
+    }
+  }
+
   box-shadow: 0 0 1.4rem #d5d3d3;
+
+  @media (max-width: 1290px) {
+    ul {
+      margin-top: 5rem;
+    }
+  }
+  @media (max-width: 1000px) {
+    ul {
+      margin-top: 10rem;
+    }
+  }
 
   img {
     margin-right: 2rem;
@@ -135,6 +165,7 @@ const Container = styled(motion.div)`
   margin: 0 auto;
   display: flex;
   width: 100%;
+  position: relative;
   height: 90%;
 `;
 

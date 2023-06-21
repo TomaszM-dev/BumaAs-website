@@ -75,6 +75,10 @@ const FooterStyle = styled(motion.div)`
   width: 100%;
   margin-top: 1rem;
   z-index: 1000;
+
+  @media (max-width: 952px) {
+    padding: 1rem 0;
+  }
 `;
 const ContactContainer = styled(motion.div)`
   display: flex;

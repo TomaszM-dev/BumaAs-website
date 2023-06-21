@@ -96,6 +96,10 @@ const Credentials = styled(motion.div)`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 952px) {
+    width: 60rem;
+  }
+
   div {
     overflow: hidden;
     width: 27rem;
@@ -138,6 +142,10 @@ const TextContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 952px) {
+    margin-bottom: 8rem;
+  }
+
   p {
     padding: 1rem;
     font-size: 1.7rem;
@@ -161,6 +169,11 @@ const ContentBottom = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 952px) {
+    flex-direction: column;
+    width: 60%;
+  }
 `;
 
 const ContentTop = styled(motion.div)`

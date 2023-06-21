@@ -5,8 +5,7 @@ import styled from "styled-components";
 import TabDetail from "../components/TabDetail";
 import TabData from "../Data/TabData";
 import { useState, useEffect, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLink, faUsers } from "@fortawesome/free-solid-svg-icons";
+
 import { useScroll } from "../components/useScroll";
 import { scrollReveal, titleAnimation } from "../animations";
 
@@ -39,47 +38,55 @@ const WhatWeDo = function() {
       <Headline>
         <Title title={title}></Title>
       </Headline>
-      <TabContainer>
-        <TabNav>
-          <ul>
-            {tabTitles.map((el) => {
-              return (
-                <li
-                  key={el.title}
-                  onClick={activeHandler}
-                  className={
-                    active[0].title === el.toLocaleString() ? "active" : ""
-                  }
-                >
-                  {/* <FontAwesomeIcon icon={faUsers} className="icon" /> */}
-                  {el}
-                </li>
-              );
-            })}
-            <TabIndicator ref={tabRef}></TabIndicator>
-          </ul>
-        </TabNav>
-        <AnimatePresence>
+      <Hide>
+        <TabContainer
+          variants={scrollReveal}
+          animate={controls}
+          initial="hidden"
+          ref={element}
+        >
+          <TabNav>
+            <ul>
+              {tabTitles.map((el) => {
+                return (
+                  <li
+                    key={el.title}
+                    onClick={activeHandler}
+                    className={
+                      active[0].title === el.toLocaleString() ? "active" : ""
+                    }
+                  >
+                    {/* <FontAwesomeIcon icon={faUsers} className="icon" /> */}
+                    {el}
+                  </li>
+                );
+              })}
+              <TabIndicator ref={tabRef}></TabIndicator>
+            </ul>
+          </TabNav>
+
           {active.map((el) => {
             return (
               <TabDetail
+                layout
                 title={el.title}
                 icon={el.icon}
                 information={el.information}
                 key={el.title}
-                animate={{ opacity: 1 }}
-                initial={{ opacity: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
                 className="box"
               />
             );
           })}
-        </AnimatePresence>
-      </TabContainer>
+        </TabContainer>
+      </Hide>
     </Container>
   );
 };
+
+const Hide = styled(motion.div)`
+  /* overflow: hidden; */
+  z-index: 10;
+`;
 
 const TabIndicator = styled(motion.div)`
   position: absolute;
@@ -150,7 +157,7 @@ const Container = styled(motion.div)`
   position: relative;
   margin-bottom: -8rem;
   width: 100%;
-  height: 100vh;
+  height: 80rem;
   display: flex;
 
   flex-direction: column;

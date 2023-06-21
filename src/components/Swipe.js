@@ -17,9 +17,6 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import { useState } from "react";
 
 const Swipe = function ({ setIsOpened, setIsActive, opened }) {
-  const location = useLocation();
-  const url = location.pathname;
-
   const credentialsData = CredentialsData();
 
   const activeHandler = (e) => {

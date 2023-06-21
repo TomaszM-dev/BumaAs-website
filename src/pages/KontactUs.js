@@ -28,7 +28,6 @@ const KontactUs = () => {
             ></FontAwesomeIcon>
             <h3>Adresse</h3>
             <p>Nedre Realingsveg 136 </p>
-            <p>2005 Realingen </p>
           </Card>
           <Card className="card2">
             <FontAwesomeIcon
@@ -74,19 +73,42 @@ const Card = styled(motion.div)`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 952px) {
+    width: 60rem;
+    height: 18rem;
+    flex-direction: row;
+  }
+
   .icon {
     font-size: 5rem;
     margin-bottom: 2rem;
     color: blue;
+
+    @media (max-width: 952px) {
+      margin-left: 5rem;
+      padding: 2rem;
+      font-size: 6rem;
+    }
   }
 
   h3 {
     margin-bottom: 1rem;
     font-size: 2rem;
     text-transform: uppercase;
+
+    @media (max-width: 952px) {
+      padding: 2rem;
+      font-size: 2.4rem;
+    }
   }
 
   p {
+    @media (max-width: 952px) {
+      padding: 0 4rem;
+      text-align: center;
+      font-size: 1.7rem;
+    }
+
     font-size: 1.5rem;
     padding: 0rem;
   }
@@ -98,6 +120,12 @@ const CardContainer = styled(motion.div)`
   margin: -16rem 3rem;
   height: 50rem;
   align-items: start;
+
+  @media (max-width: 952px) {
+    flex-direction: column;
+    height: 80rem;
+    margin: -10rem 3rem;
+  }
 `;
 
 const Content = styled(motion.div)`

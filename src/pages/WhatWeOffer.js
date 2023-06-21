@@ -9,6 +9,7 @@ import Filter from "../components/Filter";
 import { TjenesterData } from "../Data/TjenesterData";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { scrollReveal, titleAnimation } from "../animations";
 
 const WhatWeOffer = ({ setIsActive, active }) => {
   const workData = TjenesterData();
@@ -21,11 +22,8 @@ const WhatWeOffer = ({ setIsActive, active }) => {
   const linkHandler = (e) => {
     const cur = filtered.filter((el) => el.img === e.target.src);
 
-    // loc(`/tjenester/${cur[0]?.url}`);
     setIsActive(cur);
   };
-
-  // console.log(currentItem[0]);
 
   return (
     <Container id="tjenester">
@@ -107,7 +105,6 @@ const Item = styled(motion.div)`
   cursor: pointer;
   margin: 2rem 2rem;
   padding-top: 1rem;
-
   overflow: hidden;
 
   img {
@@ -173,7 +170,7 @@ const Links = styled(motion.div)`
 
 const Container = styled(motion.div)`
   width: 100%;
-  height: 110vh;
+  height: 90rem;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   position: relative;
   object-fit: cover;

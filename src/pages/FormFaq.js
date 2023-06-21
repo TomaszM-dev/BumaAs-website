@@ -11,6 +11,7 @@ const FormFaq = () => {
     <Bg>
       <Container>
         <Form />
+
         <FaqSection />
       </Container>
       <Footer />
@@ -59,6 +60,12 @@ const Container = styled(motion.div)`
   padding-top: 10rem;
   margin-bottom: 20rem;
   justify-content: space-between;
+
+  @media (max-width: 952px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 export default FormFaq;
