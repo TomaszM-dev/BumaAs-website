@@ -40,6 +40,14 @@ const Links = styled(motion.div)`
   width: 55%;
   margin: 0 auto;
 
+  @media (max-width: 752px) {
+    width: 70%;
+  }
+
+  @media (max-width: 582px) {
+    width: 97%;
+  }
+
   button {
     margin-top: 3rem;
     border-radius: 0px;

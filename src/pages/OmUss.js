@@ -188,6 +188,11 @@ const Hero = styled(motion.div)`
     height: 100rem;
   }
 
+  @media (max-width: 750px) {
+    height: 120rem;
+    clip-path: polygon(0 0, 100% 8%, 100% 99%, 0 92%);
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -359,6 +364,11 @@ const Image = styled(motion.div)`
 
   @media (max-width: 952px) {
     margin: 10rem;
+    height: 50rem;
+  }
+
+  @media (max-width: 650px) {
+    margin: 0;
   }
 
   img {
@@ -418,10 +428,14 @@ const Pictures = styled(motion.div)`
   grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
   grid-gap: 1.4rem;
 
+  @media (max-width: 650px) {
+    width: 95%;
+  }
+
   @media (max-width: 952px) {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
     margin-bottom: 16rem;
   }
 

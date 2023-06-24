@@ -103,6 +103,9 @@ const TitleContainer = styled(motion.div)`
   width: 75%;
   margin: 5rem auto;
 
+  @media (max-width: 632px) {
+    flex-direction: column;
+  }
   p {
     font-size: 2.2em;
   }
@@ -213,8 +216,14 @@ const Projects = styled(motion.div)`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 0.5fr 0.5fr;
   grid-gap: 1.4rem;
-
   margin-bottom: 10rem;
+
+  @media (max-width: 592px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 16rem;
+  }
 
   .project1 {
     width: 100%;

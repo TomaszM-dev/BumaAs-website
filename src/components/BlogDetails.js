@@ -100,6 +100,10 @@ const Section = styled(motion.div)`
   flex-direction: column;
   padding: 1rem 5rem;
 
+  @media (max-width: 482px) {
+    padding: 1rem;
+  }
+
   ul {
     font-size: 1.7rem;
 
@@ -142,10 +146,13 @@ const Container = styled(motion.div)`
   overflow: scroll;
   flex-direction: column;
   padding: 3rem;
-  z-index: 1000;
+  z-index: 10;
   transform: translate(-50%, -45%);
   background: white;
 
+  @media (max-width: 482px) {
+    width: 85%;
+  }
   h1 {
     margin: 2rem 0;
     width: 70%;

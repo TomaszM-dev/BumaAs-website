@@ -54,6 +54,14 @@ const Contact = styled(motion.div)`
   border-left: 1px solid #bcbcbc;
   padding-left: 3rem;
 
+  @media (max-width: 650px) {
+    margin: 2rem;
+    border-left: none;
+    align-self: center;
+    justify-self: center;
+    padding-left: 0;
+  }
+
   .icon {
     color: white;
     margin-bottom: 1rem;
@@ -79,12 +87,26 @@ const FooterStyle = styled(motion.div)`
   @media (max-width: 952px) {
     padding: 1rem 0;
   }
+
+  @media (max-width: 750px) {
+  }
 `;
 const ContactContainer = styled(motion.div)`
   display: flex;
   margin-left: 7rem;
   flex-wrap: wrap;
-  /* flex: 1; */
+
+  @media (max-width: 750px) {
+    margin-left: 0;
+    margin: 4rem 0;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const WaveShared = styled(motion.div)`
@@ -96,6 +118,10 @@ const WaveShared = styled(motion.div)`
   background: url(${wave});
 
   margin-left: -1.5rem;
+
+  @media (max-width: 750px) {
+    top: -8.5rem;
+  }
 `;
 
 const Wave1 = styled(WaveShared)`
@@ -116,8 +142,12 @@ const Container = styled(motion.div)`
 
   img {
     flex: 0 0 20%;
-    /* align-self: center; */
     width: 24rem;
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

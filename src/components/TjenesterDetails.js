@@ -69,8 +69,20 @@ const TitleContainer = styled(motion.div)`
     width: 60rem;
     border-radius: 10px;
     top: 50%;
-    left: 50%;
+    left: 52.4%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 692px) {
+      width: 45rem;
+    }
+
+    @media (max-width: 552px) {
+      width: 35rem;
+    }
+
+    @media (max-width: 450px) {
+      width: 25rem;
+    }
   }
 
   div {
@@ -94,6 +106,9 @@ const Section = styled(motion.div)`
   }
 
   div {
+    @media (max-width: 692px) {
+      flex-direction: column;
+    }
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,6 +118,12 @@ const Section = styled(motion.div)`
     margin-right: 4rem;
     width: 50%;
     height: 80%;
+
+    @media (max-width: 692px) {
+      margin-right: 0rem;
+      width: 80%;
+      margin-bottom: 4rem;
+    }
   }
 
   p {

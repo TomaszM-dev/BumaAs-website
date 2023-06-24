@@ -99,7 +99,7 @@ const Nav = () => {
 
 const MobileNav = styled(motion.div)`
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
   top: 0;
   left: 0;
   width: 100%;
@@ -194,6 +194,10 @@ const HamburgerNav = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 650px) {
+    padding: 1rem 3rem;
+  }
 
   ul {
     display: flex;

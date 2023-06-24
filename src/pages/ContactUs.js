@@ -78,6 +78,12 @@ const Content = styled(motion.div)`
   background: #ffffffbd;
   clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
 
+  @media (max-width: 752px) {
+    width: 100%;
+    clip-path: none;
+    text-align: center;
+  }
+
   h1 {
     margin-top: 3rem;
     font-weight: 800;
@@ -91,6 +97,10 @@ const Content = styled(motion.div)`
   p {
     font-size: 1.8rem;
     width: 80%;
+
+    @media (max-width: 752px) {
+      font-weight: 500;
+    }
   }
 
   button {

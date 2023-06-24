@@ -51,6 +51,18 @@ const FormStyle = styled(motion.div)`
     height: 55rem;
   }
 
+  @media (max-width: 752px) {
+    width: 60%;
+  }
+
+  @media (max-width: 652px) {
+    width: 70%;
+  }
+
+  @media (max-width: 452px) {
+    width: 80%;
+  }
+
   img {
     width: 20rem;
     margin-top: 1.4rem;

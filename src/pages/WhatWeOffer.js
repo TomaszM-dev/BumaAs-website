@@ -87,6 +87,21 @@ const Work = styled(motion.div)`
   border-radius: 5px;
   background-color: #ffffff90;
   overflow: hidden;
+
+  @media (max-width: 752px) {
+    width: 60rem;
+    height: 74rem;
+  }
+
+  @media (max-width: 582px) {
+    width: 40rem;
+    height: 98rem;
+  }
+
+  @media (max-width: 420px) {
+    width: 30rem;
+    height: 160rem;
+  }
 `;
 
 const Items = styled(motion.div)`
@@ -174,6 +189,20 @@ const Container = styled(motion.div)`
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   position: relative;
   object-fit: cover;
+
+  @media (max-width: 752px) {
+    height: 110rem;
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+  }
+
+  @media (max-width: 582px) {
+    height: 130rem;
+  }
+
+  @media (max-width: 420px) {
+    height: 195rem;
+    clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 97%);
+  }
 
   &:before {
     content: "";

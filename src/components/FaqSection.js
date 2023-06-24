@@ -56,6 +56,14 @@ const Faq = styled(motion.div)`
     width: 50rem;
   }
 
+  @media (max-width: 752px) {
+    width: 40rem;
+  }
+
+  @media (max-width: 452px) {
+    width: 30rem;
+  }
+
   /* backface-visibility: hidden; */
 
   h2 {

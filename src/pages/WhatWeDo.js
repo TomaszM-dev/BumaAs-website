@@ -98,6 +98,10 @@ const TabIndicator = styled(motion.div)`
   right: 0;
   border-radius: 10px;
   transition: all 1s;
+
+  @media (max-width: 752px) {
+    display: none;
+  }
 `;
 const TabNav = styled(motion.div)`
   flex: 0 0 30%;
@@ -112,11 +116,21 @@ const TabNav = styled(motion.div)`
 
   border-right: 1px solid #000;
 
+  @media (max-width: 752px) {
+    border: none;
+    padding-right: 0rem;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 752px) {
+      flex-direction: row;
+      margin: 1rem 1.5rem;
+      flex-wrap: wrap;
+    }
 
     li {
       width: 100%;
@@ -124,6 +138,11 @@ const TabNav = styled(motion.div)`
       margin-left: 5rem;
       cursor: pointer;
       padding: 1rem;
+
+      @media (max-width: 752px) {
+        margin-left: 0;
+        text-align: center;
+      }
 
       .icon {
         margin-right: 0.5rem;
@@ -151,6 +170,20 @@ const TabContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   /* justify-content: center; */
+
+  @media (max-width: 952px) {
+    width: 85%;
+  }
+
+  @media (max-width: 752px) {
+    flex-direction: column;
+    height: 70rem;
+    width: 90%;
+  }
+
+  @media (max-width: 500px) {
+    height: 70rem;
+  }
 `;
 const Container = styled(motion.div)`
   background: #fefefec7;
@@ -161,6 +194,10 @@ const Container = styled(motion.div)`
   display: flex;
 
   flex-direction: column;
+
+  @media (max-width: 752px) {
+    height: 100rem;
+  }
 `;
 
 const Headline = styled(motion.div)`

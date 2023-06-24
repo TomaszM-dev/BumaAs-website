@@ -58,6 +58,10 @@ const ContactUsContainer = styled(motion.div)`
   display: flex;
   height: 71rem;
   align-items: flex-start;
+
+  @media (max-width: 752px) {
+    /* height: 90rem; */
+  }
 `;
 const Card = styled(motion.div)`
   border-radius: 10px 60px 10px 60px;
@@ -79,6 +83,15 @@ const Card = styled(motion.div)`
     flex-direction: row;
   }
 
+  @media (max-width: 752px) {
+    flex-direction: column;
+    height: 34rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 35rem;
+  }
+
   .icon {
     font-size: 5rem;
     margin-bottom: 2rem;
@@ -88,6 +101,11 @@ const Card = styled(motion.div)`
       margin-left: 5rem;
       padding: 2rem;
       font-size: 6rem;
+    }
+
+    @media (max-width: 752px) {
+      margin-left: 0;
+      margin-bottom: 0rem;
     }
   }
 
@@ -123,8 +141,12 @@ const CardContainer = styled(motion.div)`
 
   @media (max-width: 952px) {
     flex-direction: column;
-    height: 80rem;
+    height: 90rem;
     margin: -10rem 3rem;
+  }
+
+  @media (max-width: 752px) {
+    /* height: 90rem; */
   }
 `;
 
@@ -136,9 +158,15 @@ const Content = styled(motion.div)`
   margin: 6rem auto;
   width: 100%;
   /* height: 70vh; */
+  height: 100rem;
 
   h1 {
     font-size: 2.5rem;
+
+    @media (max-width: 752px) {
+      margin-top: 15rem;
+      text-align: center;
+    }
   }
 
   span {

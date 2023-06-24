@@ -85,6 +85,10 @@ const Container = styled(motion.div)`
   margin-top: 1rem;
   width: 100%;
   height: 90rem;
+
+  @media (max-width: 752px) {
+    height: 96rem;
+  }
 `;
 
 const TitleContainer = styled(motion.div)`
