@@ -97,7 +97,15 @@ const Item = styled(motion.div)`
   width: 30rem;
 
   @media (max-width: 952px) {
-    width: 45rem;
+    width: 55rem;
+  }
+
+  @media (max-width: 572px) {
+    width: 40rem;
+  }
+
+  @media (max-width: 482px) {
+    width: 30rem;
   }
 
   h1 {
@@ -112,6 +120,11 @@ const Item = styled(motion.div)`
     @media (max-width: 952px) {
       width: 45rem;
       height: 30rem;
+    }
+
+    @media (max-width: 482px) {
+      width: 30rem;
+      height: 25rem;
     }
   }
 
