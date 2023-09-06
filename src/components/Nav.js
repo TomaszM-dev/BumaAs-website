@@ -114,7 +114,7 @@ const MobileNav = styled(motion.div)`
     transform: translate(-50%, -50%);
 
     @media (max-width: 400px) {
-      width: 23rem;
+      width: 22rem;
       top: 13%;
     }
   }
