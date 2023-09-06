@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <ScrollTop />
+
       <AnimatePresence mode="wait">
         <Routes>
           <Route

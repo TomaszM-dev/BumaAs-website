@@ -75,7 +75,7 @@ const Nav = () => {
               <Link to="/kontact-us">Contact Us</Link>
             </li>
             <li>
-              <Link to="/referencer">Referencer</Link>
+              <Link to="/referenser">Referencer</Link>
             </li>
             <li>
               <Link to="/tjenester">Tjenester</Link>
@@ -112,6 +112,11 @@ const MobileNav = styled(motion.div)`
     top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 400px) {
+      width: 23rem;
+      top: 13%;
+    }
   }
 
   ul {
@@ -122,14 +127,18 @@ const MobileNav = styled(motion.div)`
     color: black;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 400px) {
+      top: 50%;
+      width: 100%;
+    }
   }
 
   li {
     text-align: center;
     margin: 2rem;
     padding: 0.5rem 2rem;
-    border-bottom: 1px solid #0e30cb;
-    border-radius: 5px;
+
     transition: all 1s;
     &:hover {
       transition: all 1s;
@@ -199,12 +208,18 @@ const HamburgerNav = styled(motion.div)`
     padding: 1rem 3rem;
   }
 
+  @media (max-width: 400px) {
+  }
+
   ul {
     display: flex;
     margin: 0 auto;
     max-width: 160rem;
     align-items: start;
     justify-content: space-between;
+
+    @media (max-width: 400px) {
+    }
   }
 
   img {
@@ -216,6 +231,10 @@ const HamburgerNav = styled(motion.div)`
     margin: 0;
     background: none;
     padding: 2.5rem;
+
+    @media (max-width: 400px) {
+      margin-right: 4.4rem;
+    }
   }
 
   @media (min-width: 952px) {

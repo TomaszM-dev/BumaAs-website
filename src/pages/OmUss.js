@@ -324,9 +324,13 @@ const About = styled(motion.div)`
   padding: 5rem 8rem;
 
   @media (max-width: 1300px) {
-    display: block;
-    padding: 2rem;
+    gap: 20px;
+    padding: 2rem 5rem;
     text-align: center;
+  }
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
   }
 `;
 
@@ -358,10 +362,13 @@ const Image = styled(motion.div)`
   position: relative;
   overflow: hidden;
   z-index: 2;
-  height: 70rem;
+  height: 60rem;
   border-radius: 10px;
   box-shadow: 0 0 1.4rem #000;
 
+  @media (max-width: 1300px) {
+    height: 50rem;
+  }
   @media (max-width: 952px) {
     margin: 10rem;
     height: 50rem;

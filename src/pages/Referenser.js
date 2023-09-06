@@ -100,6 +100,10 @@ const Credentials = styled(motion.div)`
     width: 60rem;
   }
 
+  @media (max-width: 400px) {
+    width: 95%;
+  }
+
   div {
     overflow: hidden;
     width: 27rem;

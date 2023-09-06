@@ -158,7 +158,6 @@ const Content = styled(motion.div)`
   margin: 6rem auto;
   width: 100%;
   /* height: 70vh; */
-  height: 100rem;
 
   h1 {
     font-size: 2.5rem;

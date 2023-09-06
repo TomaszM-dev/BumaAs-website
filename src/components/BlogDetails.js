@@ -165,7 +165,12 @@ const Container = styled(motion.div)`
     margin: 2rem 0;
     width: 60rem;
     height: 40rem;
+
     align-self: center;
+
+    @media (max-width: 400px) {
+      width: 95%;
+    }
   }
 `;
 

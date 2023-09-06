@@ -40,7 +40,8 @@ const ProsjekterDetails = ({
         style={{
           background: `url(${image})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100%",
+
+          objectFit: "cover",
         }}
       >
         <TitleContainer>
@@ -79,7 +80,7 @@ const Content = styled(motion.div)`
 
 const About = styled(motion.div)`
   margin: 5rem 5rem;
-  background: #ffffff97;
+  /* background: #ffffff97; */
   height: 80%;
   width: 70%;
   display: flex;
@@ -91,18 +92,27 @@ const About = styled(motion.div)`
     width: 80%;
     height: 100%;
   }
+  @media (max-width: 400px) {
+    width: 95%;
+  }
 
   h4 {
     color: blue;
     text-align: center;
     margin: 2rem 0;
+    background: #ffffff97;
+    padding: 1rem 2rem;
+    border-radius: 4px;
   }
 
   p {
     color: black;
     font-size: 1.6rem;
     font-weight: 600;
-    padding: 2rem 1rem;
+
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    background: #ffffff97;
   }
 `;
 
@@ -131,7 +141,7 @@ const Container = styled(motion.div)`
 
   &:before {
     content: "";
-    background: #0e0e927c;
+    /* background: #0e0e927c; */
 
     position: absolute;
     top: 0;
